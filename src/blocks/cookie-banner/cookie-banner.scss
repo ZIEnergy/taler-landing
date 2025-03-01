@@ -1,0 +1,49 @@
+.cookie-banner {
+  position: fixed;
+  bottom: 30px;
+  left: 24px;
+  padding: 46px 30px 30px;
+  display: none;
+  width: 100%;
+  max-width: 575px;
+  background: theme('colors.dark');
+  border-radius: 20px;
+
+  @media only screen and (max-width: theme('screens.mdMax.max')) {
+    bottom: 6px;
+    left: 8px;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    font-size: 27px;
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-size: 17px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  &__btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      grid-template-columns: 1fr;
+    }
+
+    .btn {
+      width: 100%;
+      min-height: 50px;
+    }
+  }
+}

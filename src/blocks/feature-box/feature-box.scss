@@ -1,0 +1,46 @@
+.feature-box {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background: theme('colors.gray2');
+  border-radius: 30px;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  @media only screen and (max-width: theme('screens.mdMax.max')) {
+    min-height: 359px;
+  }
+
+  &:hover {
+
+    .feature-box__img img {
+      transform: scale(1.1);
+    }
+  }
+
+  &__content {
+    padding: 44px 29px 26px;
+
+    @media only screen and (min-width: theme('screens.md')) {
+      padding: 44px 56px 40px 42px;
+    }
+  }
+
+  &__img {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+
+    img {
+      transition: var(--transition-long);
+
+      @media only screen and (min-width: theme('screens.md')) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

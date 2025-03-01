@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taler</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./public/css/style.css?v=1.0.0">
+</head>
+<body>
+
+<div class="intro-video">
+  <video id="intro-video" muted playsinline preload="auto">
+    <source src="./public/videos/start.mp4#t=0.1" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div class="site-content">
+  <div class="menu">
+    <div class="menu__container">
+      <button type="button" class="menu__burger"></button>
+      <ul class="menu__list">
+        <li>
+          <a href="#">Mobile wallet</a>
+        </li>
+        <li>
+          <a href="#">Desktop wallet</a>
+        </li>
+        <li>
+          <a href="#">Staking</a>
+        </li>
+        <li>
+          <a href="#">Vivid Staking</a>
+        </li>
+        <li>
+          <a href="#">Blockchain</a>
+        </li>
+        <li>
+          <a href="#">Security</a>
+        </li>
+        <li>
+          <a href="#">FAQ</a>
+        </li>
+        <li>
+          <a href="#">How to get started</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="header__overlay"></div>
+  <header class="header">
+    <button type="button" class="header__burger"></button>
+    <div class="lang-switcher">
+      <button type="button" class="lang-switcher__current">
+        <span>
+          <img src="./public/img/flags/flag_gb.svg" alt="">
+          <span>English</span>
+        </span>
+      </button>
+      
+      <ul class="lang-switcher__dropdown">
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_fr.svg" alt="">
+            French
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_gb.svg" alt="">
+            English
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_it.svg" alt="">
+            Italian
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_de.svg" alt="">
+            Deutsch
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_ch.svg" alt="">
+            Chinese
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="./public/img/flags/flag_jp.svg" alt="">
+            Japanese
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <main class="main">
+    <section class="hero h-screen">
+      <div class="container flex items-center justify-center h-screen">
+        <h1 class="max-w-[1078px] mx-auto hero__text">Secure and convenient cryptocurrency wallet in one app</h1>
+      </div>
+    </section>
+    
+    <section class="md:pt-[60px] md:pb-[65px] py-[32px]">
+      <div class="container">
+        <div class="grid md:grid-cols-3 md:gap-[69px] grid-cols-1 gap-[62px]">
+          <div class="flex flex-col items-start gap-[20px]">
+            <img src="./public/img/icons/Icon1.svg" alt="">
+            <h4>Universal</h4>
+            <p class="text-gray">Whether you're a beginner or a pro, Taler Wallet makes Web3 simple and convenient</p>
+          </div>
+
+          <div class="flex flex-col items-start gap-[20px]">
+            <img src="./public/img/icons/Icon2.svg" alt="">
+            <h4>Multi-network</h4>
+            <p class="text-gray">Interact with any token or decentralized application in the core L1 and L2 networks</p>
+          </div>
+
+          <div class="flex flex-col items-start gap-[20px]">
+            <img src="./public/img/icons/Icon3.svg" alt="">
+            <h4>Flexible</h4>
+            <p class="text-gray">Choose any of 22 languages and track your balance in over 22 fiat currencies</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[110px] md:pb-[134px] py-[32px]">
+      <div class="container">
+        <h2 class="text-center mb-[40px] md:mb-[84px]">Taler wallet</h2>
+        <div class="grid md:grid-cols-2 md:gap-[20px] grid-cols-1 gap-[16px]">
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]">Sending tokens</h4>
+              <p class="text-gray">Easily send hundreds of tokens and perform cross-chain transfers on the Taler network in seconds</p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img1.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img1.png"
+                  type="image/png" />
+                <source
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img-mob1.webp"
+                  type="image/webp" />
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-src="./public/img/feature-box/feature-box-img-mob1.png"
+                  class="lazyload pointer-events-none select-none mdMax:w-[204px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]">Buying tokens</h4>
+              <p class="text-gray">Start or simply top up your balance with our on-ramp providers</p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img2.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img2.png"
+                  type="image/png" />
+                <source
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img-mob2.webp"
+                  type="image/webp" />
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-src="./public/img/feature-box/feature-box-img-mob2.png"
+                  class="lazyload pointer-events-none select-none mdMax:w-[254px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]">Token exchange</h4>
+              <p class="text-gray">Easily exchange tokens using Taler's proprietary interface</p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img3.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img3.png"
+                  type="image/png" />
+                <source
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img-mob3.webp"
+                  type="image/webp" />
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-src="./public/img/feature-box/feature-box-img-mob3.png"
+                  class="lazyload pointer-events-none select-none mdMax:w-[206px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]">Transaction History</h4>
+              <p class="text-gray">View past transactions with the fiat currency exchange rate at the time of the transaction</p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img4.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img4.png"
+                  type="image/png" />
+                <source
+                  srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-srcset="./public/img/feature-box/feature-box-img-mob4.webp"
+                  type="image/webp" />
+                <img
+                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                  data-src="./public/img/feature-box/feature-box-img-mob4.png"
+                  class="lazyload pointer-events-none select-none mdMax:w-[246px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0">
+      <picture>
+        <source
+          srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-srcset="./public/img/glow1.webp"
+          type="image/webp" />
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="./public/img/glow1.png"
+          class="lazyload pointer-events-none select-none section__bg mdMax:hidden"
+          alt="" />
+      </picture>
+      
+      <div class="container">
+        <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px]">
+          <div class="md:max-w-[488px]">
+            <div class="mdMax:text-center mb-[8px]">
+              <div class="subtitle2">Mobile</div>
+            </div>
+            <h3 class="mb-[26px] mdMax:text-center">All your assets in one mobile place</h3>
+            <div class="flex gap-[8px] mdMax:flex-col mdMax:items-center">
+              <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                <span>App Store</span>
+              </a>
+              <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                <span>Google Play</span>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <video muted playsinline autoplay loop preload="auto" class="w-[368px] md:mr-[72px]">
+              <source src="./public/videos/mobile.mp4#t=0.1" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0">
+      <picture>
+        <source
+          srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-srcset="./public/img/glow1.webp"
+          type="image/webp" />
+        <img
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="./public/img/glow1.png"
+          class="lazyload pointer-events-none select-none section__bg mdMax:hidden"
+          alt="" />
+      </picture>
+
+      <div class="container">
+        <div class="text-center mb-[8px]">
+          <div class="subtitle2">Desktop</div>
+        </div>
+        <h3 class="mb-[26px] text-center">All features<br>
+          in a desktop</h3>
+
+        <div class="dropdown !mb-[40px]">
+          <div class="dropdown__selected">
+            <div class="dropdown__selected-container">
+              <span>macOS <i>Apple Silicon</i></span>
+              <div class="dropdown__selected-arrow">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="dropdown__drop-list">
+            <a href="#" class="dropdown__drop-list-item">
+              <img src="./public/img/icons/icon-apple.svg" alt="">
+              <span>macOS <i>Apple Silicon</i></span>
+            </a>
+            <a href="#" class="dropdown__drop-list-item">
+              <img src="./public/img/icons/icon-apple.svg" alt="">
+              <span>macOS <i>Intel</i></span>
+            </a>
+            <a href="#" class="dropdown__drop-list-item">
+              <img src="./public/img/icons/icon-windows.svg" alt="">
+              <span>Windows <i>Intel</i></span>
+            </a>
+            <a href="#" class="dropdown__drop-list-item">
+              <img src="./public/img/icons/icon-windows.svg" alt="">
+              <span>Windows <i>ARM</i></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex justify-center">
+          <video muted playsinline autoplay loop preload="auto">
+            <source src="./public/videos/desktop_preview.mp4#t=0.1" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!--<footer class="footer">
+    <div class="container">
+      <p>Footer</p>
+    </div>
+  </footer>-->
+  
+  <div class="cookie-banner">
+    <div class="cookie-banner__title">Privacy Settings</div>
+    <div class="cookie-banner__text">We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</div>
+    <div class="cookie-banner__btns">
+      <button type="button" class="btn btn-outline-green">Customize</button>
+      <button type="button" class="btn btn-outline-green" id="reject-cookies">Reject All</button>
+      <button type="button" class="btn btn-light" id="accept-cookies">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<script src="./public/js/vendor-min.js?v=1.0.0"></script>
+<script src="./public/js/scripts-min.js?v=1.0.0"></script>
+</body>
+</html>

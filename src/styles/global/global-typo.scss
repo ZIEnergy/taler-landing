@@ -1,0 +1,229 @@
+h1,
+.h1 {
+  font-size: 40px;
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 96px;
+    line-height: 90%;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 36px;
+  line-height: 100%;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 64px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 48px;
+    line-height: 100%;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 40px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+  }
+}
+
+.subtitle1 {
+  display: inline-block;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: 0;
+  background: linear-gradient(90deg, rgb(51, 196, 115), rgb(51, 194, 196));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle2 {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 500;
+  letter-spacing: 0;
+  background: linear-gradient(90deg, rgb(51, 196, 115), rgb(51, 194, 196));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 27px;
+    line-height: 40px;
+  }
+}
+
+.subtitle3 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.caption {
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+p,
+.p {
+  font-size: 17px;
+  line-height: 130%;
+  font-weight: 500;
+  letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+a {
+
+  &:hover {
+  }
+}
+
+hr {
+}
+
+ul {
+  margin: 0 0 0 26px;
+  list-style-type: disc;
+
+  li {
+    font-size: 15px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: -.3px;
+    color: theme('colors.secondary');
+
+    @media only screen and (min-width: theme('screens.md')) {
+      font-size: 20px;
+      letter-spacing: -.4px;
+    }
+  }
+}
+
+ol {
+  margin: 0 0 0 26px;
+  list-style: decimal;
+
+  li {
+    font-size: 15px;
+    line-height: 150%;
+    font-weight: 500;
+    letter-spacing: -.3px;
+    color: theme('colors.secondary');
+
+    @media only screen and (min-width: theme('screens.md')) {
+      font-size: 20px;
+      letter-spacing: -.4px;
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  th {
+  }
+
+  td {
+  }
+}
+
+tr {
+}
+
+th {
+}
+
+td {
+}
+
+input {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+}
+
+button {
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type='submit'] {
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+div,
+a,
+a:active,
+a:focus {
+  outline: none;
+}

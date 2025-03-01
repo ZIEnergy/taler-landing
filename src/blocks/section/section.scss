@@ -1,0 +1,23 @@
+.section {
+  position: relative;
+
+  @media only screen and (min-width: theme('screens.md')) {
+  }
+
+  &--glow1 {
+
+    .section__bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use 'root';
+
+@use 'mixins';
+
+/* Plugins */
+@use 'plugins/jquery.fancybox_fix';
+
+@use 'plugins/plugins-rewrite';
+
+/* Global styles */
+@use 'global/global-fonts';
+
+@use 'global/global-typo';
+
+@use 'global/global-scaffolding';
+
+/* Blocks */
+@use '../blocks/main/main';
+
+@use '../blocks/section/section';
+
+@use '../blocks/header/header';
+
+@use '../blocks/lang-switcher/lang-switcher';
+
+@use '../blocks/animations/animations';
+
+@use '../blocks/intro-video/intro-video';
+
+@use '../blocks/hero/hero';
+
+@use '../blocks/menu/menu';
+
+@use '../blocks/cookie-banner/cookie-banner';
+
+@use '../blocks/feature-box/feature-box';
+
+@use '../blocks/dropdown/dropdown';
