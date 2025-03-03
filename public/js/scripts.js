@@ -1,20 +1,3 @@
-var controller = new ScrollMagic.Controller();
-var mq = window.matchMedia( "(min-width: 767.98px)" );
-var mqMob = window.matchMedia( "(max-width: 768px)" );
-
-jQuery(function ($) {
-  if ($('#animate_icon_1').length) {
-    if (mq.matches) {
-      var animate_icon_1 = new ScrollMagic.Scene({
-        triggerElement: "#trigger_animate_icon_1",
-        duration: 400
-      })
-        .setTween("#animate_icon_1", { scale: 1 })
-        .addTo(controller);
-    }
-  }
-});
-
 jQuery(function ($) {
 
   if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
@@ -35,6 +18,23 @@ jQuery(function ($) {
   
 });
 
+var controller = new ScrollMagic.Controller();
+var mq = window.matchMedia( "(min-width: 767.98px)" );
+var mqMob = window.matchMedia( "(max-width: 768px)" );
+
+jQuery(function ($) {
+  if ($('#animate_icon_1').length) {
+    if (mq.matches) {
+      var animate_icon_1 = new ScrollMagic.Scene({
+        triggerElement: "#trigger_animate_icon_1",
+        duration: 400
+      })
+        .setTween("#animate_icon_1", { scale: 1 })
+        .addTo(controller);
+    }
+  }
+});
+
 jQuery(function ($) {
   $('.dropdown__selected').on('click', function (e) {
     e.preventDefault();
@@ -48,6 +48,36 @@ jQuery(function ($) {
       $('.dropdown').removeClass('is-open');
     }
   });
+});
+
+jQuery(function ($) {
+
+  $('.faq__question').on('click', function(e) {
+    e.preventDefault();
+    if ($(this).parent().hasClass('is-open')) {
+      $(this).parent().removeClass('is-open');
+      $(this).next().slideUp({
+        duration: 500,
+        start: function() {
+          $(this).find('.faq__answer-wrapper').css('opacity', '0');
+        }
+      });
+    } else {
+      $(this).parent().addClass('is-open');
+      $(this).next().slideDown({
+        duration: 500,
+        // complete: function() {
+        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
+        // },
+        progress: function(animation, progress, remainingMs) {
+          if (remainingMs < 100) {
+            $(this).find('.faq__answer-wrapper').css('opacity', '1');
+          }
+        }
+      });
+    }
+  });
+
 });
 
 jQuery(function ($) {
@@ -108,7 +138,7 @@ jQuery(function ($) {
       $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
     );*/
     $container.animate({
-      scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+      scrollTop: $scrollTo.offset().top
     }, 500);
   });
 });
@@ -124,5 +154,18 @@ jQuery(function ($) {
     $('.menu').fadeOut(500, function() {
       $('body').css('overflow', '');
     });
+  });
+
+  $('.menu__list li a').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+
+    $('.menu').fadeOut(500);
+    $('body').css('overflow', '');
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
   });
 });

@@ -9,7 +9,7 @@ jQuery(function ($) {
       $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
     );*/
     $container.animate({
-      scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+      scrollTop: $scrollTo.offset().top
     }, 500);
   });
 });

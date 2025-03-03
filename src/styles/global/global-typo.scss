@@ -61,14 +61,19 @@ h5,
 
 .subtitle1 {
   display: inline-block;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 24px;
+  line-height: 130%;
   font-weight: 500;
   letter-spacing: 0;
-  background: linear-gradient(90deg, rgb(51, 196, 115), rgb(51, 194, 196));
+  background: linear-gradient(90deg, rgb(51, 194, 196), rgb(51, 196, 115));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 36px;
+    line-height: 40px;
+  }
 }
 
 .subtitle2 {
@@ -77,10 +82,17 @@ h5,
   line-height: 150%;
   font-weight: 500;
   letter-spacing: 0;
-  background: linear-gradient(90deg, rgb(51, 196, 115), rgb(51, 194, 196));
+  background: linear-gradient(90deg, rgb(51, 194, 196), rgb(51, 196, 115));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  &--reverse-gradient {
+    background: linear-gradient(90deg, rgb(51, 196, 115), rgb(51, 194, 196));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   @media only screen and (min-width: theme('screens.md')) {
     font-size: 27px;
@@ -89,10 +101,14 @@ h5,
 }
 
 .subtitle3 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 120%;
   font-weight: 700;
   letter-spacing: 0;
+
+  @media only screen and (min-width: theme('screens.md')) {
+    font-size: 24px;
+  }
 }
 
 .caption {
@@ -112,6 +128,18 @@ p,
   @media only screen and (min-width: theme('screens.md')) {
     font-size: 20px;
     line-height: 150%;
+  }
+
+  &.p-lg {
+    font-size: 17px;
+    line-height: 130%;
+    font-weight: 500;
+    letter-spacing: 0;
+
+    @media only screen and (min-width: theme('screens.md')) {
+      font-size: 27px;
+      line-height: 40px;
+    }
   }
 }
 

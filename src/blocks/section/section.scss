@@ -20,4 +20,17 @@
       z-index: 1;
     }
   }
+
+  &--glow2 {
+
+    .section__bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @media only screen and (max-width: theme('screens.mdMax.max')) {
+        display: none;
+      }
+    }
+  }
 }

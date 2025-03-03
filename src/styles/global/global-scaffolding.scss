@@ -21,9 +21,9 @@ body {
 }
 
 .site-content {
-  opacity: 0;
   position: relative;
   z-index: 2;
+  opacity: 0;
   transition: opacity .5s ease;
 
   &.show {

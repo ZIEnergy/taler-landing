@@ -43,10 +43,12 @@ module.exports = {
         gray2: 'rgba(25, 45, 70, 0.4)',
         gray3: '#575C67',
         gray4: 'rgba(255, 255, 255, 0.3)',
+        gray5: 'rgba(23, 39, 54, 0.3)',
         green: '#3EBE8D',
         green2: 'rgba(62, 190, 141, 0.2)',
         green3: '#22A47A',
         green4: '#153b37',
+        green5: 'rgba(23, 79, 65, 0.2)',
       }
     },
     screens: {

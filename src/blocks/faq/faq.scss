@@ -1,0 +1,81 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    border-bottom: 3px solid rgba(127, 127, 144, .3);
+
+    &.is-open {
+
+      .faq__question-icon {
+        //transform: rotate(45deg);
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='23' viewBox='0 0 17 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.598 0.2V2.678H0.26V0.2H16.598Z' fill='%2322A47A'/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+
+  &__question {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 40px;
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      padding: 24px 0;
+      gap: 28px;
+    }
+
+    &-text {
+      font-size: 24px;
+      line-height: 120%;
+      font-weight: 700;
+      letter-spacing: 0;
+      color: rgb(255, 255, 255);
+
+      @media only screen and (max-width: theme('screens.mdMax.max')) {
+        font-size: 20px;
+      }
+    }
+
+    &-icon {
+      width: 22px;
+      min-width: 22px;
+      height: 23px;
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='23' viewBox='0 0 22 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.486 12.72H12.12V22.17H9.39V12.72H0.0660003V10.2H9.39V0.75H12.12V10.2H21.486V12.72Z' fill='%2322A47A'/%3E%3C/svg%3E%0A");
+      transition: var(--transition-long);
+    }
+  }
+
+  &__answer {
+    padding: 8px 0 32px;
+    display: none;
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      padding: 0 0 24px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      transition: var(--transition-long);
+    }
+
+    p {
+      max-width: 970px;
+      font-size: 20px;
+      line-height: 150%;
+      font-weight: 500;
+      letter-spacing: 0;
+      color: theme('colors.gray');
+
+      @media only screen and (max-width: theme('screens.mdMax.max')) {
+        font-size: 17px;
+        line-height: 130%;
+      }
+    }
+  }
+}

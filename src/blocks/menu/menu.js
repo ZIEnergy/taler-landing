@@ -10,4 +10,17 @@ jQuery(function ($) {
       $('body').css('overflow', '');
     });
   });
+
+  $('.menu__list li a').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+
+    $('.menu').fadeOut(500);
+    $('body').css('overflow', '');
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
+  });
 });
