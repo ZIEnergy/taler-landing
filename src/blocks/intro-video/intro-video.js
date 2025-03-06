@@ -6,7 +6,7 @@ jQuery(function ($) {
     $video[0].play();
 
     $video.on("timeupdate", function () {
-      console.log(this.currentTime);
+      // console.log(this.currentTime);
       if (this.currentTime >= 1.5) {
         $(".site-content").addClass("show");
       }

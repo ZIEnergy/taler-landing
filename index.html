@@ -114,8 +114,9 @@
       </div>
     </section>
     
-    <section class="md:pt-[60px] md:pb-[65px] py-[32px]">
-      <div class="container">
+    <section class="md:pt-[60px] md:pb-[65px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <div class="grid md:grid-cols-3 md:gap-[69px] grid-cols-1 gap-[62px]">
           <div class="flex flex-col items-start gap-[20px]">
             <img
@@ -150,8 +151,9 @@
       </div>
     </section>
 
-    <section class="md:pt-[110px] md:pb-[134px] py-[32px]">
-      <div class="container">
+    <section class="md:pt-[110px] md:pb-[134px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <h2 class="text-center mb-[40px] md:mb-[84px]">Taler wallet</h2>
         <div class="grid md:grid-cols-2 md:gap-[20px] grid-cols-1 gap-[16px]">
           <div class="feature-box">
@@ -263,13 +265,14 @@
       </div>
     </section>
 
-    <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0" id="mobile_wallet">
+    <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent" id="mobile_wallet">
       <img
         src="./public/img/glow1.png"
         class="pointer-events-none select-none section__bg mdMax:hidden"
         alt="" />
-      
-      <div class="container">
+
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px]">
           <div class="md:max-w-[488px] mdMax:px-[30px]">
             <div class="mdMax:text-center mb-[8px]">
@@ -286,8 +289,8 @@
             </div>
           </div>
           
-          <div>
-            <video muted playsinline autoplay loop preload="auto" class="w-[368px] md:mr-[72px]">
+          <div class="js-video-trigger">
+            <video muted playsinline loop preload="auto" class="w-[368px] md:mr-[72px] js-video-node">
               <source src="./public/videos/mobile.mp4#t=0.1" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -296,7 +299,7 @@
       </div>
     </section>
 
-    <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0" id="desktop_wallet">
+    <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
       <picture>
         <source
           srcset="./public/img/glow1.webp"
@@ -307,7 +310,8 @@
           alt="" />
       </picture>
 
-      <div class="container">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <div class="text-center mb-[8px]">
           <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
         </div>
@@ -346,8 +350,8 @@
           </div>
         </div>
 
-        <div class="flex justify-center">
-          <video muted playsinline autoplay loop preload="auto">
+        <div class="flex justify-center js-video-trigger">
+          <video muted playsinline loop preload="auto" class="js-video-node">
             <source src="./public/videos/desktop_preview.mp4#t=0.1" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -357,29 +361,36 @@
     
     <section class="md:py-[100px] py-[32px]" id="staking">
       <div class="container mdMax:px-[56px]">
-        <div class="flex mdMax:flex-col mdMax:gap-[40px]">
-          <div class="md:flex-[1_0_0]">
+        <div class="flex mdMax:flex-col mdMax:gap-[40px] relative js-reveal-parent">
+          <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+          <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
             <h2>Super simple staking</h2>
           </div>
           <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-            <div class="subtitle1">Taler Wallet takes away the hassle of steaking by offering you the most convenient and profitable way to get started! Forget nomination pools, direct steaking and validators - we do it all for you.</div>
+            <div class="subtitle1 js-reveal-bottom reveal--bottom">Taler Wallet takes away the hassle of steaking by offering you the most convenient and profitable way to get started! Forget nomination pools, direct steaking and validators - we do it all for you.</div>
 
-            <picture>
-              <source
-                srcset="./public/img/img-cubes.webp"
-                type="image/webp" />
-              <img
-                src="./public/img/img-cubes.png"
-                class="pointer-events-none select-none"
-                alt="" />
-            </picture>
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+              <div class="js-reveal-bottom reveal--bottom">
+                <picture>
+                  <source
+                    srcset="./public/img/img-cubes.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/img-cubes.png"
+                    class="pointer-events-none select-none"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="md:pt-[106px] md:pb-[117px] py-[32px]">
-      <div class="container">
+    <section class="md:pt-[106px] md:pb-[117px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <div class="grid grid-cols-1 gap-[16px] md:grid md:grid-cols-2 md:gap-[40px]">
           <h2 class="mdMax:order-1 mdMax:mb-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]">Regular Staking</h2>
           <h2 class="mdMax:order-4 mdMax:my-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" id="vivid_staking">Vivid Staking</h2>
@@ -425,96 +436,115 @@
       </div>
     </section>
 
-    <section class="section section--glow2 md:pt-[28px] md:pb-0 py-[32px]">
-      <div class="section__bg">
-        <img
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-          data-src="./public/img/glow2.png"
-          class="lazyload pointer-events-none select-none"
-          width="948"
-          alt="" />
-      </div>
-      
-      <div class="container relative mdMax:px-[56px]">
-        <h2 class="md:mb-[80px] mb-[40px] md:max-w-[508px]">Tokenized smart contracts</h2>
-        <div class="mdMax:flex mdMax:flex-col-reverse mdMax:gap-[40px]">
-          <p class="p-lg text-gray md:max-w-[508px]">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.</p>
-          <div class="floating-cubes">
-            <picture>
-              <source
-                media="(min-width:768px)"
-                srcset="./public/img/img-cubes2.webp"
-                type="image/webp" />
-              <source
-                media="(min-width:768px)"
-                srcset="./public/img/img-cubes2.png"
-                type="image/png" />
-              <source
-                srcset="./public/img/img-cubes2-mob.webp"
-                type="image/webp" />
-              <img
-                src="./public/img/img-cubes2-mob.png"
-                class="pointer-events-none select-none"
-                width="685"
-                alt="" />
-            </picture>
+    <div class="overflow-hidden">
+      <section class="section section--glow2 md:pt-[28px] md:pb-0 py-[32px]">
+        <div class="section__bg">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/glow2.png"
+            class="lazyload pointer-events-none select-none"
+            width="948"
+            alt="" />
+        </div>
+
+        <div class="container relative mdMax:px-[56px] js-reveal-parent">
+          <div class="js-reveal-bottom-trigger"></div>
+          <h2 class="md:mb-[80px] mb-[40px] md:max-w-[508px] js-reveal-bottom reveal--bottom">Tokenized smart contracts</h2>
+          <div class="mdMax:flex mdMax:flex-col-reverse mdMax:gap-[40px] relative">
+            <p class="p-lg text-gray md:max-w-[508px] js-reveal-bottom reveal--bottom">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.</p>
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-right-trigger absolute top-0 left-0"></div>
+              <div class="floating-cubes reveal--right js-reveal-right">
+                <picture>
+                  <source
+                    media="(min-width:768px)"
+                    srcset="./public/img/img-cubes2.webp"
+                    type="image/webp" />
+                  <source
+                    media="(min-width:768px)"
+                    srcset="./public/img/img-cubes2.png"
+                    type="image/png" />
+                  <source
+                    srcset="./public/img/img-cubes2-mob.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/img-cubes2-mob.png"
+                    class="pointer-events-none select-none"
+                    width="685"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="md:pt-[100px] md:pb-[120px] py-[32px]" id="blockchain">
-      <div class="container mdMax:px-[56px] relative z-[1]">
-        <div class="flex mdMax:flex-col mdMax:gap-[40px]">
-          <div class="md:flex-[1_0_0]">
-            <h2>Fast blockchain</h2>
-          </div>
-          <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-            <div class="subtitle1">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.<br><br>
-              This capability makes Taler an ideal “overlay network” for integration with other blockchain systems such as Bitcoin.</div>
+      <section class="md:pt-[100px] md:pb-[120px] py-[32px] js-reveal-parent" id="blockchain">
+        <div class="container mdMax:px-[56px] relative z-[1]">
+          <div class="js-reveal-bottom-trigger"></div>
+          <div class="flex mdMax:flex-col mdMax:gap-[40px]">
+            <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
+              <h2>Fast blockchain</h2>
+            </div>
+            <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
+              <div class="subtitle1 js-reveal-bottom reveal--bottom">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.<br><br>
+                This capability makes Taler an ideal “overlay network” for integration with other blockchain systems such as Bitcoin.</div>
 
-            <picture>
-              <source
-                srcset="./public/img/img-cubes3.webp"
-                type="image/webp" />
-              <img
-                src="./public/img/img-cubes3.png"
-                class="pointer-events-none select-none mdMax:w-[221px]"
-                width="262" height="295"
-                alt="" />
-            </picture>
+              <div class="relative js-reveal-parent">
+                <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+                <div class="js-reveal-bottom reveal--bottom">
+                  <picture>
+                    <source
+                      srcset="./public/img/img-cubes3.webp"
+                      type="image/webp" />
+                    <img
+                      src="./public/img/img-cubes3.png"
+                      class="pointer-events-none select-none mdMax:w-[221px]"
+                      width="262" height="295"
+                      alt="" />
+                  </picture>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section class="md:pt-[102px] md:pb-[123px] py-[32px]" id="security">
+    <section class="md:pt-[102px] md:pb-[123px] py-[32px] js-reveal-parent" id="security">
       <div class="container mdMax:px-[56px]">
+        <div class="js-reveal-bottom-trigger"></div>
         <div class="flex mdMax:flex-col mdMax:gap-[40px]">
-          <div class="md:flex-[1_0_0]">
+          <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
             <h2>Your assets<br>
               are safe</h2>
           </div>
           <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-            <div class="subtitle1">All data between the device and the blockchain is encrypted, ensuring complete security and confidentiality of transactions</div>
-
-            <picture>
-              <source
-                srcset="./public/img/img-lock1.webp"
-                type="image/webp" />
-              <img
-                src="./public/img/img-lock1.png"
-                class="pointer-events-none select-none mdMax:w-[144px]"
-                width="257" height="294"
-                alt="" />
-            </picture>
+            <div class="subtitle1 js-reveal-bottom reveal--bottom">All data between the device and the blockchain is encrypted, ensuring complete security and confidentiality of transactions</div>
+            
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+              <div class="js-reveal-bottom reveal--bottom">
+                <picture>
+                  <source
+                    srcset="./public/img/img-lock1.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/img-lock1.png"
+                    class="pointer-events-none select-none mdMax:w-[144px]"
+                    width="257" height="294"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="md:pt-[122px] md:pb-[115px] py-[32px]">
-      <div class="container">
+    <section class="md:pt-[122px] md:pb-[115px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
         <div class="grid grid-cols-1 gap-[16px] md:grid-cols-3 md:gap-[20px]">
           <div class="feature-box feature-box--type3">
             <div class="min-w-[40px]">
@@ -603,8 +633,9 @@
       </div>
     </section>
     
-    <section class="md:pt-[117px] md:pb-[76px] py-[32px]" id="faq">
-      <div class="container mdMax:px-[56px]">
+    <section class="md:pt-[117px] md:pb-[76px] py-[32px] js-reveal-parent" id="faq">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container mdMax:px-[56px] js-reveal-bottom reveal--bottom">
         <h2 class="md:text-center md:mb-[110px]">Frequently asked questions</h2>
 
         <div class="faq">
@@ -678,14 +709,15 @@
       </div>
     </section>
 
-    <section class="section section--glow1 md:pt-[100px] md:pb-[108px] py-[32px]" id="how_to_get_started">
+    <section class="section section--glow1 md:pt-[100px] md:pb-[108px] py-[32px] js-reveal-parent" id="how_to_get_started">
+      <div class="js-reveal-bottom-trigger"></div>
       <img
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
         data-src="./public/img/glow1.png"
         class="lazyload pointer-events-none select-none section__bg mdMax:hidden"
         alt="" />
       
-      <div class="container">
+      <div class="container js-reveal-bottom reveal--bottom">
         <h2 class="md:text-center md:mb-[30px] mb-[40px]">How to start using the app</h2>
         <p class="text-gray md:text-center">Get started with Web3 without revealing personal information.<br>
           Use a standalone Taler cryptocurrency wallet</p>
