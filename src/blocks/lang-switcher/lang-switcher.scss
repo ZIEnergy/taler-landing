@@ -145,6 +145,13 @@
       font-weight: 400;
       letter-spacing: 0;
       gap: 12px;
+      background: transparent;
+      border-radius: 6px;
+      transition: background var(--transition-base);
+
+      &:hover {
+        background: theme('colors.gray4');
+      }
 
       img {
         width: 24px;

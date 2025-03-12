@@ -81,6 +81,9 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
       '3xlMax': {'max': '1279.98px'},
       // => @media (max-width: 1280px) { ... }
+
+      '4xl': '1600px',
+      '4xlMax': {'max': '1599.98px'},
     }
   },
   corePlugins: {

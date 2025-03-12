@@ -1,8 +1,21 @@
 .hero {
+  height: 100vh;
+
+  @media only screen and (max-width: theme('screens.mdMax.max')) {
+    height: 70vh;
+  }
 
   &--show-bg {
     background: transparent url(../img/hero-bg.jpg) center center no-repeat;
     background-size: cover;
+  }
+
+  .container {
+    height: 100vh;
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      height: 70vh;
+    }
   }
 
   &__text {

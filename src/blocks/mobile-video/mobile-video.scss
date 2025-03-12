@@ -1,0 +1,14 @@
+.mobile-video {
+
+  @media only screen and (max-width: theme('screens.mdMax.max')) {
+    margin-top: -280px;
+    overflow: hidden;
+  }
+
+  video {
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      transform: translateY(280px);
+    }
+  }
+}

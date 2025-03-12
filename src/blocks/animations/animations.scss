@@ -1,5 +1,13 @@
 .reveal {
 
+  &--show-on-mob {
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      opacity: 1 !important;
+      transform: translate(0, 0) !important;
+    }
+  }
+
   &--bottom {
     opacity: 0; /* Initially hidden */
     transform: translateY(100px); /* Start 50px lower */

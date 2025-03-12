@@ -13,7 +13,7 @@
   
   <link rel="stylesheet" href="./public/css/style.css?v=1.0.1">
 </head>
-<body>
+<body class="with-intro">
 
 <div class="intro-video">
   <video id="intro-video" muted playsinline preload="auto">
@@ -108,15 +108,15 @@
   </header>
   
   <main class="main">
-    <section class="hero h-screen">
-      <div class="container flex items-center justify-center h-screen">
+    <section class="hero">
+      <div class="container flex items-center justify-center">
         <h1 class="max-w-[1078px] mx-auto hero__text">Secure and convenient cryptocurrency wallet in one app</h1>
       </div>
     </section>
     
     <section class="md:pt-[60px] md:pb-[65px] py-[32px] js-reveal-parent">
       <div class="js-reveal-bottom-trigger"></div>
-      <div class="container js-reveal-bottom reveal--bottom">
+      <div class="container js-reveal-bottom reveal--bottom reveal--show-on-mob">
         <div class="grid md:grid-cols-3 md:gap-[69px] grid-cols-1 gap-[62px]">
           <div class="flex flex-col items-start gap-[20px]">
             <img
@@ -289,7 +289,7 @@
             </div>
           </div>
           
-          <div class="js-video-trigger">
+          <div class="js-video-trigger mobile-video">
             <video muted playsinline loop preload="auto" class="w-[368px] md:mr-[72px] js-video-node">
               <source src="./public/videos/mobile.mp4#t=0.1" type="video/mp4">
               Your browser does not support the video tag.
@@ -300,61 +300,92 @@
     </section>
 
     <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
-      <picture>
-        <source
-          srcset="./public/img/glow1.webp"
-          type="image/webp" />
-        <img
-          src="./public/img/glow1.png"
-          class="pointer-events-none select-none section__bg mdMax:hidden"
-          alt="" />
-      </picture>
-
       <div class="js-reveal-bottom-trigger"></div>
-      <div class="container js-reveal-bottom reveal--bottom">
-        <div class="text-center mb-[8px]">
-          <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
-        </div>
-        <h3 class="mb-[26px] text-center">All features<br>
-          in a desktop</h3>
+      
+      <div class="desktop-app__wrapper">
+        <div class="desktop-app__container">
 
-        <div class="dropdown !mb-[40px]">
-          <div class="dropdown__selected">
-            <div class="dropdown__selected-container">
-              <span>macOS <i>Apple Silicon</i></span>
-              <div class="dropdown__selected-arrow">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
-                </svg>
+          <picture>
+            <source
+              srcset="./public/img/glow1.webp"
+              type="image/webp" />
+            <img
+              src="./public/img/glow1.png"
+              class="pointer-events-none select-none section__bg mdMax:hidden"
+              alt="" />
+          </picture>
+          
+          <div class="container">
+            <div class="js-reveal-bottom reveal--bottom relative z-10">
+              <div class="text-center mb-[8px]">
+                <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
               </div>
+              <h3 class="mb-[26px] text-center">All features<br>
+                in a desktop</h3>
+              <div class="dropdown">
+                <div class="dropdown__selected">
+                  <div class="dropdown__selected-container">
+                    <span>macOS <i>Apple Silicon</i></span>
+                    <div class="dropdown__selected-arrow">
+                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="dropdown__drop-list">
+                  <a href="#" class="dropdown__drop-list-item">
+                    <img src="./public/img/icons/icon-apple.svg" alt="">
+                    <span>macOS <i>Apple Silicon</i></span>
+                  </a>
+                  <a href="#" class="dropdown__drop-list-item">
+                    <img src="./public/img/icons/icon-apple.svg" alt="">
+                    <span>macOS <i>Intel</i></span>
+                  </a>
+                  <a href="#" class="dropdown__drop-list-item">
+                    <img src="./public/img/icons/icon-windows.svg" alt="">
+                    <span>Windows <i>Intel</i></span>
+                  </a>
+                  <a href="#" class="dropdown__drop-list-item">
+                    <img src="./public/img/icons/icon-windows.svg" alt="">
+                    <span>Windows <i>ARM</i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="desktop-app">
+              <picture>
+                <source
+                  srcset="./public/img/desktop_01.webp"
+                  type="image/webp" />
+                <img
+                  src="./public/img/desktop_01.png"
+                  class="pointer-events-none select-none desktop-app__img desktop-app__img--1"
+                  alt="" />
+              </picture>
+              <picture>
+                <source
+                  srcset="./public/img/desktop_02.webp"
+                  type="image/webp" />
+                <img
+                  src="./public/img/desktop_02.png"
+                  class="pointer-events-none select-none desktop-app__img desktop-app__img--2"
+                  alt="" />
+              </picture>
+              <picture>
+                <source
+                  srcset="./public/img/desktop_03.webp"
+                  type="image/webp" />
+                <img
+                  src="./public/img/desktop_03.png"
+                  class="pointer-events-none select-none desktop-app__img desktop-app__img--3"
+                  alt="" />
+              </picture>
             </div>
           </div>
           
-          <div class="dropdown__drop-list">
-            <a href="#" class="dropdown__drop-list-item">
-              <img src="./public/img/icons/icon-apple.svg" alt="">
-              <span>macOS <i>Apple Silicon</i></span>
-            </a>
-            <a href="#" class="dropdown__drop-list-item">
-              <img src="./public/img/icons/icon-apple.svg" alt="">
-              <span>macOS <i>Intel</i></span>
-            </a>
-            <a href="#" class="dropdown__drop-list-item">
-              <img src="./public/img/icons/icon-windows.svg" alt="">
-              <span>Windows <i>Intel</i></span>
-            </a>
-            <a href="#" class="dropdown__drop-list-item">
-              <img src="./public/img/icons/icon-windows.svg" alt="">
-              <span>Windows <i>ARM</i></span>
-            </a>
-          </div>
-        </div>
-
-        <div class="flex justify-center js-video-trigger">
-          <video muted playsinline loop preload="auto" class="js-video-node">
-            <source src="./public/videos/desktop_preview.mp4#t=0.1" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
         </div>
       </div>
     </section>
@@ -769,7 +800,7 @@
 
       <div class="flex justify-between items-center mb-[144px]">
         <div class="flex items-center gap-[24px]">
-          <a href="#" class="footer__link">Terms of service</a>
+          <a href="/terms.html" class="footer__link">Terms of service</a>
           <a href="#" class="footer__link">Privacy Policy</a>
         </div>
         <div class="footer__text">Taler UNO</div>

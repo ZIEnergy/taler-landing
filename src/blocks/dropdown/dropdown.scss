@@ -120,8 +120,15 @@
     align-items: center;
     line-height: 1;
     text-decoration: none;
+    background: transparent;
+    border-radius: 6px;
+    transition: background var(--transition-base);
     cursor: pointer;
     gap: 12px;
+
+    &:hover {
+      background: theme('colors.gray4');
+    }
 
     &:not(:last-child) {
       margin-bottom: 8px;
