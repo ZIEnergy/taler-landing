@@ -2,7 +2,14 @@
   padding: 40px 0 45px;
 
   @media only screen and (max-width: theme('screens.mdMax.max')) {
-    display: none;
+    padding: 32px 0;
+  }
+
+  .container {
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      padding: 0 56px;
+    }
   }
 
   &__link {
@@ -13,6 +20,9 @@
     letter-spacing: 0;
     color: theme('colors.gray3');
     transition: var(--transition-base);
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+    }
 
     &:hover {
       color: theme('colors.white');

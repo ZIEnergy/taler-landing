@@ -8,6 +8,26 @@
   width: 100%;
   justify-content: center;
 
+  &__back {
+    position: absolute;
+    top: 50%;
+    left: 66px;
+    display: block;
+    width: 20px;
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      left: 24px;
+      width: 10px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
   &__burger {
     margin: 0;
     padding: 0;

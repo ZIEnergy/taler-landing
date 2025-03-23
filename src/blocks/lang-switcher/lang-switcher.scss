@@ -122,10 +122,11 @@
 
     @media only screen and (max-width: theme('screens.mdMax.max')) {
       right: -16px;
-      margin-top: 9px;
+      margin: 0;
       padding: 32px 40px;
       width: 100vw;
-      background: transparent;
+      height: calc(100vh - 48px);
+      background: 0 0;
     }
 
     li:not(:last-child) {

@@ -20,6 +20,18 @@
   padding: 0 24px;
 }
 
+.hide-scroll {
+  overflow: hidden;
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+  }
+}
+
+.contain-paint {
+  contain: paint;
+}
+
 .btn {
   padding: 2px 20px;
   display: inline-flex;

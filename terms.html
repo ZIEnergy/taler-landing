@@ -7,6 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Taler | Terms of use</title>
 
+  <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Taler" />
+  <link rel="manifest" href="./site.webmanifest" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -20,28 +27,67 @@
     <button type="button" class="menu__burger"></button>
     <ul class="menu__list no-scroll">
       <li>
-        <a href="./?options=skip-intro#mobile_wallet">Mobile wallet</a>
+        <a href="./#mobile_wallet">Mobile wallet</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#desktop_wallet">Desktop wallet</a>
+        <a href="./#desktop_wallet">Desktop wallet</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#staking">Staking</a>
+        <a href="./#staking">Staking</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#vivid_staking">Vivid Staking</a>
+        <a href="./#vivid_staking">Vivid Staking</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#blockchain">Blockchain</a>
+        <a href="./#blockchain">Blockchain</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#security">Security</a>
+        <a href="./#security">Security</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#faq">FAQ</a>
+        <a href="./#faq">FAQ</a>
       </li>
       <li>
-        <a href="./?options=skip-intro#how_to_get_started">How to get started</a>
+        <a href="./#how_to_get_started">How to get started</a>
+      </li>
+    </ul>
+
+    <ul class="menu__lang-switcher">
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_fr.svg" alt="">
+          French
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_gb.svg" alt="">
+          English
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_it.svg" alt="">
+          Italian
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_de.svg" alt="">
+          Deutsch
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_ch.svg" alt="">
+          Chinese
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <img src="./public/img/flags/flag_jp.svg" alt="">
+          Japanese
+        </a>
       </li>
     </ul>
   </div>
@@ -49,8 +95,11 @@
 
 <div class="header__overlay"></div>
 <header class="header">
+  <a href="./" class="header__back">
+    <img src="./public/img/icons/icon-back.svg" alt="">
+  </a>
   <button type="button" class="header__burger"></button>
-  <div class="lang-switcher">
+  <!--<div class="lang-switcher">
     <button type="button" class="lang-switcher__current">
       <span>
         <img src="./public/img/flags/flag_gb.svg" alt="">
@@ -96,7 +145,7 @@
         </a>
       </li>
     </ul>
-  </div>
+  </div>-->
 </header>
 
 <main class="main">
@@ -131,31 +180,31 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="flex justify-between items-center">
-      <a href="./?options=skip-intro#mobile_wallet" class="footer__link">Mobile wallet</a>
-      <a href="./?options=skip-intro#desktop_wallet" class="footer__link">Desktop wallet</a>
-      <a href="./?options=skip-intro#staking" class="footer__link">Staking</a>
-      <a href="./?options=skip-intro#vivid_staking" class="footer__link">Vivid Staking</a>
-      <a href="./?options=skip-intro#blockchain" class="footer__link">Blockchain</a>
-      <a href="./?options=skip-intro#security" class="footer__link">Security</a>
-      <a href="./?options=skip-intro#faq" class="footer__link">FAQ</a>
-      <a href="./?options=skip-intro#how_to_get_started" class="footer__link">How to get started</a>
+    <div class="flex md:justify-between md:items-center mdMax:flex-col mdMax:gap-[32px]">
+      <a href="./#mobile_wallet" class="footer__link">Mobile wallet</a>
+      <a href="./#desktop_wallet" class="footer__link">Desktop wallet</a>
+      <a href="./#staking" class="footer__link">Staking</a>
+      <a href="./#vivid_staking" class="footer__link">Vivid Staking</a>
+      <a href="./#blockchain" class="footer__link">Blockchain</a>
+      <a href="./#security" class="footer__link">Security</a>
+      <a href="./#faq" class="footer__link">FAQ</a>
+      <a href="./#how_to_get_started" class="footer__link">How to get started</a>
     </div>
 
     <div class="footer__divider"></div>
 
-    <div class="flex justify-between items-center mb-[144px]">
-      <div class="flex items-center gap-[24px]">
+    <div class="flex md:justify-between md:items-center md:mb-[144px] mb-[32px] mdMax:flex-col">
+      <div class="flex md:items-center md:gap-[24px] gap-[32px] mdMax:flex-col mdMax:mb-[95px]">
         <a href="./terms.html" class="footer__link">Terms of service</a>
         <a href="#" class="footer__link">Privacy Policy</a>
       </div>
       <div class="footer__text">Taler UNO</div>
     </div>
 
-    <div class="flex justify-between items-center">
-      <div class="footer__text text-gray3">© 2025 Taler</div>
+    <div class="flex md:justify-between md:items-center mdMax:flex-col">
+      <div class="footer__text text-gray3 mdMax:mb-[40px]">© 2025 Taler</div>
 
-      <div class="flex items-center gap-[33px]">
+      <div class="flex items-center md:gap-[33px] mdMax:justify-between">
         <a href="#">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="

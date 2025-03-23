@@ -4,6 +4,10 @@
   @media only screen and (min-width: theme('screens.md')) {
   }
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &--glow1 {
 
     .section__bg {

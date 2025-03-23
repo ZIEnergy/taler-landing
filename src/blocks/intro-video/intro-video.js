@@ -1,3 +1,4 @@
+/*
 jQuery(function ($) {
   var $video = $('.intro-video video');
   var searchParams = new URLSearchParams(window.location.search);
@@ -23,7 +24,7 @@ jQuery(function ($) {
 
         if (this.currentTime >= 2) {
           $('.hero__text').addClass('show');
-          $('body').css('overflow', '');
+          // $('body').css('overflow', '');
           $('.intro-video').addClass('is-finished');
           $video.off('timeupdate');
         }
@@ -32,9 +33,10 @@ jQuery(function ($) {
         }, 0);
       });
 
-      /*$video.on('ended', function () {
+      $video.on('ended', function () {
         $('.hero').addClass("hero--show-bg");
-      });*/
+      });
     } 
   }
 });
+*/

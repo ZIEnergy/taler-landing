@@ -15,6 +15,12 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
 const cleanCSS = require('gulp-clean-css');
+const fs = require('fs');
+const path = require('path');
+
+const imageDirs = [
+  path.join(__dirname, 'public/videos/video1'),
+];
 
 const paths = {
   dirs: {
@@ -60,6 +66,27 @@ const paths = {
     watch: './src/videos/*'
   },
 };
+
+gulp.task('generateConfig', function (done) {
+  let totalImages = 0;
+  let imagesPerFolder = {};
+
+  imageDirs.forEach((dir, index) => {
+    if (fs.existsSync(dir)) {
+      const files = fs.readdirSync(dir).filter(file => /\.(jpg|jpeg|png|gif)$/i.test(file));
+      totalImages += files.length;
+      imagesPerFolder[`folder${index + 1}`] = files.length;
+    } else {
+      console.warn(`⚠️ Warning: Folder not found - ${dir}`);
+    }
+  });
+
+  const config = { totalImages, imagesPerFolder };
+  fs.writeFileSync('./public/config.json', JSON.stringify(config, null, 2));
+  console.log(`✅ Found ${totalImages} images across all folders. Saved to config.json`);
+
+  done();
+});
 
 gulp.task('clean', function () {
   return del([paths.dirs.build]);
@@ -181,6 +208,7 @@ gulp.task('server', function () {
   gulp.watch(paths.images.watch, gulp.parallel('images'));
   gulp.watch(paths.fonts.watch, gulp.parallel('fonts'));
   gulp.watch(paths.videos.watch, gulp.parallel('videos'));
+  gulp.watch('./public/videos/**/*', gulp.parallel('generateConfig'));
 });
 
 gulp.task('watch', function () {
@@ -194,6 +222,7 @@ gulp.task('watch', function () {
   gulp.watch(paths.fonts.watch, gulp.parallel('fonts'));
   gulp.watch(paths.videos.watch, gulp.parallel('videos'));
   // gulp.watch(paths.webfonts.watch, gulp.parallel('webfonts'));
+  gulp.watch('./public/videos/**/*', gulp.parallel('generateConfig'));
 });
 
 gulp.task('dev', gulp.series(
@@ -205,6 +234,7 @@ gulp.task('dev', gulp.series(
   'videos',
   'images',
   'images-webp',
+  'generateConfig',
   'server'
 ));
 
@@ -217,4 +247,5 @@ gulp.task('build', gulp.series(
   'videos',
   'images',
   'images-webp',
+  'generateConfig',
 ));
