@@ -97,6 +97,51 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
+  $('.dropdown__selected').on('click', function (e) {
+    e.preventDefault();
+    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
+    $(this).parent().toggleClass('is-open');
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
+      $('.dropdown__drop-list').fadeOut(300);
+      $('.dropdown').removeClass('is-open');
+    }
+  });
+});
+
+jQuery(function ($) {
+
+  $('.faq__question').on('click', function(e) {
+    e.preventDefault();
+    if ($(this).parent().hasClass('is-open')) {
+      $(this).parent().removeClass('is-open');
+      $(this).next().slideUp({
+        duration: 500,
+        start: function() {
+          $(this).find('.faq__answer-wrapper').css('opacity', '0');
+        }
+      });
+    } else {
+      $(this).parent().addClass('is-open');
+      $(this).next().slideDown({
+        duration: 500,
+        // complete: function() {
+        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
+        // },
+        progress: function(animation, progress, remainingMs) {
+          if (remainingMs < 100) {
+            $(this).find('.faq__answer-wrapper').css('opacity', '1');
+          }
+        }
+      });
+    }
+  });
+
+});
+
+jQuery(function ($) {
 });
 
 function desktopAppHeightHandler(height) {
@@ -177,48 +222,147 @@ $(window).on('resize', function () {
 });
 
 jQuery(function ($) {
-
-  $('.faq__question').on('click', function(e) {
+  $('.lang-switcher__current').on('click', function (e) {
     e.preventDefault();
-    if ($(this).parent().hasClass('is-open')) {
-      $(this).parent().removeClass('is-open');
-      $(this).next().slideUp({
-        duration: 500,
-        start: function() {
-          $(this).find('.faq__answer-wrapper').css('opacity', '0');
+    $('.header__overlay').fadeToggle(300);
+    $('.lang-switcher__dropdown').fadeToggle({
+      duration: 300,
+      start: function () {
+        if ($(this).is(':visible')) {
+          $(this).css({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          });
         }
-      });
-    } else {
-      $(this).parent().addClass('is-open');
-      $(this).next().slideDown({
-        duration: 500,
-        // complete: function() {
-        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
-        // },
-        progress: function(animation, progress, remainingMs) {
-          if (remainingMs < 100) {
-            $(this).find('.faq__answer-wrapper').css('opacity', '1');
-          }
-        }
-      });
-    }
-  });
-
-});
-
-jQuery(function ($) {
-  $('.dropdown__selected').on('click', function (e) {
-    e.preventDefault();
-    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
-    $(this).parent().toggleClass('is-open');
+      }
+    });
   });
 
   $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
-      $('.dropdown__drop-list').fadeOut(300);
-      $('.dropdown').removeClass('is-open');
+    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
+      $('.lang-switcher__dropdown').fadeOut(300);
+      $('.header__overlay').fadeOut(300);
     }
   });
+});
+
+function mobileVideoAnimation(imagesCount) {
+  // define images
+  var images = [];
+  var frameCount = imagesCount - 1;
+  var sectionHeight = $('.mobile-video__section')[0].scrollHeight;
+  var windowHeight = $(window).height();
+  var currentFrame = (index) => `./public/videos/video2/video${index.toString().padStart(3, '0')}.jpg`;
+
+  // Preload images
+  var preloadImages = function () {
+    for (let i = 0; i <= frameCount; i++) {
+      images.push(currentFrame(i));
+    }
+  };
+  preloadImages();
+
+  // build scene
+  // TweenMax can tween any property of any object. We use this object to cycle through the array
+  var obj = {curImg: 0};
+
+  // create tween
+  var tween = TweenMax.to(obj, 0.5,
+    {
+      curImg: images.length - 1,	// animate propery curImg to number of images
+      roundProps: "curImg",				// only integers so it can be used as an array index
+      repeat: 0,									// repeat 0 times
+      immediateRender: true,			// load first image automatically
+      ease: Linear.easeNone,			// show every image the same ammount of time
+      onUpdate: function () {
+        $(".mobile-video__video-wrapper img").attr("src", images[obj.curImg]); // set the image source
+      },
+    }
+  );
+
+  new ScrollMagic.Scene({
+    triggerElement: '.mobile-video__section',
+    duration: sectionHeight - windowHeight,
+    triggerHook: 0,
+    offset: 0,
+  })
+    /*.on('progress', function (e) {
+      var progress = Math.floor(100 * e.progress); // from 0 to 100
+      var state = e.state; // e.g. 'DURING'
+      var scrollDirection = e.scrollDirection; // 'FORWARD' or 'REVERSE'
+      console.log(state, scrollDirection, progress);
+
+      if (state === 'DURING' && scrollDirection === 'FORWARD') {
+        if (progress >= 85) {
+          $('.hero__anim-img').fadeOut(500);
+        }
+      }
+
+      if (state === 'DURING' && scrollDirection === 'REVERSE') {
+        if (progress <= 85) {
+          $('.hero__anim-img').fadeIn(500);
+        }
+      }
+    })*/
+    .setTween(tween)
+    // .addIndicators({name: 'mobile-video sequence'})
+    .addTo(controller);
+}
+
+jQuery(function ($) {
+  let loadedImages = 0;
+  let totalImages = 0;
+  let videoImages2 = 0;
+
+  function updateProgress(data) {
+    if (loadedImages === videoImages2) {
+      mobileVideoAnimation(videoImages2);
+    }
+  }
+
+  function isImageCached(src) {
+    let img = new Image();
+    img.src = src;
+
+    return img.complete && img.naturalHeight !== 0; // Cached if true
+  }
+
+  function preloadImages(folders) {
+    totalImages = folders.totalImages - folders.imagesPerFolder.folder1;
+    videoImages2 = folders.imagesPerFolder.folder2;
+    let folderPaths = ["video2"];
+
+    folderPaths.forEach((folder, index) => {
+      let count = folders.imagesPerFolder['folder2'] || 0;
+
+      for (let i = 0; i <= count - 1; i++) {
+        let imgPath = `./public/videos/${folder}/video${String(i).padStart(3, '0')}.jpg`;
+
+        if (isImageCached(imgPath)) {
+          loadedImages++;
+          updateProgress(folders);
+        } else {
+          let img = new Image();
+          img.src = imgPath;
+
+          img.onload = img.onerror = function () {
+            loadedImages++;
+            updateProgress(folders);
+          };
+        }
+      }
+    });
+  }
+
+  // Fetch totalImages from config.json
+  if ($('.mobile-video').length) {
+    $.getJSON('./public/config.json', function (data) {
+      preloadImages(data);
+    }).fail(function () {
+      console.error("Failed to load config.json");
+    });
+  }
 });
 
 function heroVideoAnimation(imagesCount) {
@@ -364,6 +508,36 @@ jQuery(function ($) {
   }
 });
 
+jQuery(function ($) {
+  $('.header__burger').on('click', function (e) {
+    e.preventDefault();
+    $('.menu').fadeIn(500);
+    $('body').css('overflow', 'hidden');
+  });
+  $('.menu__burger').on('click', function (e) {
+    e.preventDefault();
+    $('.menu').fadeOut(500, function() {
+      $('body').css('overflow', '');
+    });
+  });
+
+  $('.menu__list:not(.no-scroll) li a').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+
+    $('.menu').fadeOut(500);
+    $('body').css('overflow', '');
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
+  });
+});
+
+jQuery(function ($) {
+});
+
 /*
 jQuery(function ($) {
   var $video = $('.intro-video video');
@@ -406,180 +580,6 @@ jQuery(function ($) {
   }
 });
 */
-
-jQuery(function ($) {
-  $('.lang-switcher__current').on('click', function (e) {
-    e.preventDefault();
-    $('.header__overlay').fadeToggle(300);
-    $('.lang-switcher__dropdown').fadeToggle({
-      duration: 300,
-      start: function () {
-        if ($(this).is(':visible')) {
-          $(this).css({
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          });
-        }
-      }
-    });
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
-      $('.lang-switcher__dropdown').fadeOut(300);
-      $('.header__overlay').fadeOut(300);
-    }
-  });
-});
-
-jQuery(function ($) {
-});
-
-jQuery(function ($) {
-  $('.header__burger').on('click', function (e) {
-    e.preventDefault();
-    $('.menu').fadeIn(500);
-    $('body').css('overflow', 'hidden');
-  });
-  $('.menu__burger').on('click', function (e) {
-    e.preventDefault();
-    $('.menu').fadeOut(500, function() {
-      $('body').css('overflow', '');
-    });
-  });
-
-  $('.menu__list:not(.no-scroll) li a').on('click', function(e) {
-    e.preventDefault();
-
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
-
-    $('.menu').fadeOut(500);
-    $('body').css('overflow', '');
-    $container.animate({
-      scrollTop: $scrollTo.offset().top
-    }, 500);
-  });
-});
-
-function mobileVideoAnimation(imagesCount) {
-  // define images
-  var images = [];
-  var frameCount = imagesCount - 1;
-  var sectionHeight = $('.mobile-video__section')[0].scrollHeight;
-  var windowHeight = $(window).height();
-  var currentFrame = (index) => `./public/videos/video2/video${index.toString().padStart(3, '0')}.jpg`;
-
-  // Preload images
-  var preloadImages = function () {
-    for (let i = 0; i <= frameCount; i++) {
-      images.push(currentFrame(i));
-    }
-  };
-  preloadImages();
-
-  // build scene
-  // TweenMax can tween any property of any object. We use this object to cycle through the array
-  var obj = {curImg: 0};
-
-  // create tween
-  var tween = TweenMax.to(obj, 0.5,
-    {
-      curImg: images.length - 1,	// animate propery curImg to number of images
-      roundProps: "curImg",				// only integers so it can be used as an array index
-      repeat: 0,									// repeat 0 times
-      immediateRender: true,			// load first image automatically
-      ease: Linear.easeNone,			// show every image the same ammount of time
-      onUpdate: function () {
-        $(".mobile-video__video-wrapper img").attr("src", images[obj.curImg]); // set the image source
-      },
-    }
-  );
-
-  new ScrollMagic.Scene({
-    triggerElement: '.mobile-video__section',
-    duration: sectionHeight - windowHeight,
-    triggerHook: 0,
-    offset: 0,
-  })
-    /*.on('progress', function (e) {
-      var progress = Math.floor(100 * e.progress); // from 0 to 100
-      var state = e.state; // e.g. 'DURING'
-      var scrollDirection = e.scrollDirection; // 'FORWARD' or 'REVERSE'
-      console.log(state, scrollDirection, progress);
-
-      if (state === 'DURING' && scrollDirection === 'FORWARD') {
-        if (progress >= 85) {
-          $('.hero__anim-img').fadeOut(500);
-        }
-      }
-
-      if (state === 'DURING' && scrollDirection === 'REVERSE') {
-        if (progress <= 85) {
-          $('.hero__anim-img').fadeIn(500);
-        }
-      }
-    })*/
-    .setTween(tween)
-    // .addIndicators({name: 'mobile-video sequence'})
-    .addTo(controller);
-}
-
-jQuery(function ($) {
-  let loadedImages = 0;
-  let totalImages = 0;
-  let videoImages2 = 0;
-
-  function updateProgress(data) {
-    if (loadedImages === videoImages2) {
-      mobileVideoAnimation(videoImages2);
-    }
-  }
-
-  function isImageCached(src) {
-    let img = new Image();
-    img.src = src;
-
-    return img.complete && img.naturalHeight !== 0; // Cached if true
-  }
-
-  function preloadImages(folders) {
-    totalImages = folders.totalImages - folders.imagesPerFolder.folder1;
-    videoImages2 = folders.imagesPerFolder.folder2;
-    let folderPaths = ["video2"];
-
-    folderPaths.forEach((folder, index) => {
-      let count = folders.imagesPerFolder['folder2'] || 0;
-
-      for (let i = 0; i <= count - 1; i++) {
-        let imgPath = `./public/videos/${folder}/video${String(i).padStart(3, '0')}.jpg`;
-
-        if (isImageCached(imgPath)) {
-          loadedImages++;
-          updateProgress(folders);
-        } else {
-          let img = new Image();
-          img.src = imgPath;
-
-          img.onload = img.onerror = function () {
-            loadedImages++;
-            updateProgress(folders);
-          };
-        }
-      }
-    });
-  }
-
-  // Fetch totalImages from config.json
-  if ($('.mobile-video').length) {
-    $.getJSON('./public/config.json', function (data) {
-      preloadImages(data);
-    }).fail(function () {
-      console.error("Failed to load config.json");
-    });
-  }
-});
 
 jQuery(function ($) {
   $('.js-scroll-to').on('click', function(e) {
