@@ -91,7 +91,7 @@ module.exports = {
   },
   plugins: [
     require('tailwind-bootstrap-grid')({
-      containerMaxWidths: { sm: '100%', md: '100%', lg: '100%', xl: '1168px', '2xl': '1168px', '3xl': '1168px' },
+      containerMaxWidths: { sm: '100%', md: '100%', lg: '100%', xl: '1168px', '2xl': '1168px', '3xl': '1168px', '4xl': '1168px' },
       gridGutterWidth: '20px',
       gridColumns: 12
     }),

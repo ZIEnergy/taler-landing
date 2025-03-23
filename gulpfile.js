@@ -20,6 +20,7 @@ const path = require('path');
 
 const imageDirs = [
   path.join(__dirname, 'public/videos/video1'),
+  path.join(__dirname, 'public/videos/video2'),
 ];
 
 const paths = {

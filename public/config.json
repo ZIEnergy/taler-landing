@@ -1,6 +1,7 @@
 {
-  "totalImages": 240,
+  "totalImages": 989,
   "imagesPerFolder": {
-    "folder1": 240
+    "folder1": 240,
+    "folder2": 749
   }
 }

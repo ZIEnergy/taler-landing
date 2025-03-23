@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="./public/css/style.css?v=1.0.3">
+  <link rel="stylesheet" href="./public/css/style.css?v=1.0.4">
 </head>
 <body>
 
@@ -316,15 +316,16 @@
     </div>
   </section>
 
-  <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent" id="mobile_wallet">
-    <img
-      src="./public/img/glow1.png"
-      class="pointer-events-none select-none section__bg mdMax:hidden"
-      alt="" />
+  <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent mobile-video__section" id="mobile_wallet">
 
     <div class="js-reveal-bottom-trigger"></div>
-    <div class="container js-reveal-bottom reveal--bottom">
-      <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px]">
+    <div class="container js-reveal-bottom reveal--bottom mobile-video__wrapper">
+      <img
+        src="./public/img/glow1.png"
+        class="pointer-events-none select-none section__bg mdMax:hidden"
+        alt="" />
+      
+      <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px] mdMax:mb-[80px] md:relative md:z-[1]">
         <div class="md:max-w-[488px] mdMax:px-[30px]">
           <div class="mdMax:text-center mb-[8px]">
             <div class="subtitle2 subtitle2--reverse-gradient">Mobile</div>
@@ -340,11 +341,7 @@
           </div>
         </div>
         
-        <div class="js-video-trigger mobile-video">
-          <!--<video muted playsinline loop preload="auto" class="w-[368px] md:mr-[72px] js-video-node">
-            <source src="./public/videos/mobile.mp4#t=0.1" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>-->
+        <div class="mobile-video mdMax:!hidden">
           <picture>
             <source
               srcset="./public/img/iPhone@2x.webp"
@@ -355,17 +352,37 @@
               alt="" />
           </picture>
           <div class="mobile-video__video-wrapper">
-            <video muted playsinline loop preload="auto" class="js-video-node">
-              <source src="./public/videos/iphone-screen.mp4#t=0.1" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <img
+              src="./public/videos/video2/video000.jpg"
+              class="pointer-events-none select-none"
+              alt="" />
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center sticky top-0 left-0 md:!hidden">
+      <div class="mobile-video">
+        <picture>
+          <source
+            srcset="./public/img/iPhone@2x.webp"
+            type="image/webp" />
+          <img
+            src="./public/img/iPhone@2x.png"
+            class="pointer-events-none select-none"
+            alt="" />
+        </picture>
+        <div class="mobile-video__video-wrapper">
+          <img
+            src="./public/videos/video2/video000.jpg"
+            class="pointer-events-none select-none"
+            alt="" />
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--glow1 contain-paint pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
+  <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
     <div class="js-reveal-bottom-trigger"></div>
     
     <div class="desktop-app__wrapper">
@@ -381,7 +398,7 @@
             alt="" />
         </picture>
         
-        <div class="container">
+        <div class="container contain-paint">
           <div class="js-reveal-bottom reveal--bottom relative z-10">
             <div class="text-center mb-[8px]">
               <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
@@ -926,7 +943,7 @@
   </div>
 </div>
 
-<script src="./public/js/vendor-min.js?v=1.0.3"></script>
-<script src="./public/js/scripts-min.js?v=1.0.3"></script>
+<script src="./public/js/vendor-min.js?v=1.0.4"></script>
+<script src="./public/js/scripts-min.js?v=1.0.4"></script>
 </body>
 </html>

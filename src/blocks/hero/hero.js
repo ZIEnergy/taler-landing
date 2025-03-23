@@ -103,7 +103,7 @@ jQuery(function ($) {
   }
 
   function preloadImages(folders) {
-    totalImages = folders.totalImages
+    totalImages = folders.totalImages - folders.imagesPerFolder.folder2;
     videoImages1 = folders.imagesPerFolder.folder1;
     let folderPaths = ["video1"];
 
