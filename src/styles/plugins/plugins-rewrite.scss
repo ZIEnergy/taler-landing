@@ -32,6 +32,13 @@
   contain: paint;
 }
 
+.mdMax\:contain-paint {
+
+  @media (max-width: theme('screens.mdMax.max')) {
+    contain: paint !important;
+  }
+}
+
 .btn {
   padding: 2px 20px;
   display: inline-flex;

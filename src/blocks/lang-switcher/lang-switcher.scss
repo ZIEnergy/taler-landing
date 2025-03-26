@@ -17,13 +17,14 @@
 
   &__current {
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 
     @media only screen and (min-width: theme('screens.md')) {
       position: relative;
+      display: flex;
       min-height: 42px;
+      justify-content: center;
+      align-items: center;
       background: transparent;
     }
 

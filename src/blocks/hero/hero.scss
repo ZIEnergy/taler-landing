@@ -28,9 +28,25 @@
     display: block;
     width: 60px;
     transform: translateX(-50%);
+    animation: arrow-position-animation 4s linear infinite;
 
     @media only screen and (max-width: theme('screens.mdMax.max')) {
       width: 30px;
+    }
+
+    @keyframes arrow-position-animation {
+
+      0% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, -10px);
+      }
+
+      100% {
+        transform: translate(-50%, 0);
+      }
     }
 
     img {
