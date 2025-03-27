@@ -78,11 +78,24 @@
   &__container {
     position: sticky;
     top: 0;
+    padding-top: 100px;
     display: flex;
-    height: 100vh;
+    //height: calc(100vh - 100px);
     flex-direction: column;
 
-    @media (min-height: 900px) {
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      padding-top: 60px;
+    }
+
+    @media (min-width: theme('screens.md')) and (min-height: 940px) {
+      padding-top: 0;
+      height: 100vh;
+      justify-content: center;
+    }
+
+    @media (max-width: theme('screens.mdMax.max')) and (min-height: 560px) {
+      padding-top: 0;
+      height: 100vh;
       justify-content: center;
     }
   }
