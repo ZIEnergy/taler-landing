@@ -164,19 +164,19 @@ function heroTextReveal() {
       console.log(state, scrollDirection, progress);
 
       if (state === 'DURING' && scrollDirection === 'FORWARD') {
-        if (progress >= 50) {
+        if (progress >= 8) {
           $('.hero__down').fadeOut(300);
         }
       }
 
       if (state === 'DURING' && scrollDirection === 'REVERSE') {
-        if (progress <= 50) {
+        if (progress <= 10) {
           $('.hero__down').fadeIn(300);
         }
       }
 
       if (state === 'AFTER' && scrollDirection === 'FORWARD') {
-        if (progress >= 50) {
+        if (progress >= 8) {
           $('.hero__down').fadeOut(300);
         }
       }
