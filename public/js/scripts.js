@@ -303,6 +303,26 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
+
+  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
+    $('.cookie-banner').fadeIn(300);
+  }
+  
+  $('#accept-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+
+  $('#reject-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+  
+});
+
+jQuery(function ($) {
 });
 
 function desktopAppHeightHandler(height) {
@@ -384,41 +404,6 @@ $(window).on('resize', function () {
 
 jQuery(function ($) {
 
-  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
-    $('.cookie-banner').fadeIn(300);
-  }
-  
-  $('#accept-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-
-  $('#reject-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-  
-});
-
-jQuery(function ($) {
-  $('.dropdown__selected').on('click', function (e) {
-    e.preventDefault();
-    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
-    $(this).parent().toggleClass('is-open');
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
-      $('.dropdown__drop-list').fadeOut(300);
-      $('.dropdown').removeClass('is-open');
-    }
-  });
-});
-
-jQuery(function ($) {
-
   $('.faq__question').on('click', function(e) {
     e.preventDefault();
     if ($(this).parent().hasClass('is-open')) {
@@ -445,6 +430,21 @@ jQuery(function ($) {
     }
   });
 
+});
+
+jQuery(function ($) {
+  $('.dropdown__selected').on('click', function (e) {
+    e.preventDefault();
+    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
+    $(this).parent().toggleClass('is-open');
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
+      $('.dropdown__drop-list').fadeOut(300);
+      $('.dropdown').removeClass('is-open');
+    }
+  });
 });
 
 
@@ -492,6 +492,32 @@ jQuery(function ($) {
 */
 
 jQuery(function ($) {
+  $('.lang-switcher__current').on('click', function (e) {
+    e.preventDefault();
+    $('.header__overlay').fadeToggle(300);
+    $('.lang-switcher__dropdown').fadeToggle({
+      duration: 300,
+      start: function () {
+        if ($(this).is(':visible')) {
+          $(this).css({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          });
+        }
+      }
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
+      $('.lang-switcher__dropdown').fadeOut(300);
+      $('.header__overlay').fadeOut(300);
+    }
+  });
+});
+
+jQuery(function ($) {
 });
 
 jQuery(function ($) {
@@ -535,31 +561,5 @@ jQuery(function ($) {
     $container.animate({
       scrollTop: $scrollTo.offset().top
     }, 500);
-  });
-});
-
-jQuery(function ($) {
-  $('.lang-switcher__current').on('click', function (e) {
-    e.preventDefault();
-    $('.header__overlay').fadeToggle(300);
-    $('.lang-switcher__dropdown').fadeToggle({
-      duration: 300,
-      start: function () {
-        if ($(this).is(':visible')) {
-          $(this).css({
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          });
-        }
-      }
-    });
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
-      $('.lang-switcher__dropdown').fadeOut(300);
-      $('.header__overlay').fadeOut(300);
-    }
   });
 });
