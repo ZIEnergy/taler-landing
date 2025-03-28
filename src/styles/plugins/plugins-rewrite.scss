@@ -39,6 +39,27 @@
   }
 }
 
+.lgMax\:contain-paint {
+
+  @media (max-width: theme('screens.lgMax.max')) {
+    contain: paint !important;
+  }
+}
+
+.lg\:contain-paint {
+
+  @media (min-width: theme('screens.lg')) {
+    contain: paint !important;
+  }
+}
+
+.contain-paint--between-lg-4xl {
+
+  @media (min-width: theme('screens.lg')) and (max-width: theme('screens.4xlMax.max')) {
+    contain: paint !important;
+  }
+}
+
 .btn {
   padding: 2px 20px;
   display: inline-flex;

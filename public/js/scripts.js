@@ -518,6 +518,9 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
+});
+
+jQuery(function ($) {
   $('.header__burger').on('click', function (e) {
     e.preventDefault();
     $('.menu').fadeIn(500);
@@ -559,7 +562,4 @@ jQuery(function ($) {
       scrollTop: $scrollTo.offset().top
     }, 500);
   });
-});
-
-jQuery(function ($) {
 });

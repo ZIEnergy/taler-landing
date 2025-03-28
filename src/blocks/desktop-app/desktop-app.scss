@@ -9,7 +9,7 @@
     margin: 80px auto 0;
   }
 
-  @media only screen and (min-width: theme('screens.4xl')) {
+  @media only screen and (min-width: theme('screens.5xl')) {
     //margin: 155px auto 0;
   }
 
@@ -70,7 +70,7 @@
       height: 3500px;
     }
 
-    @media only screen and (min-width: theme('screens.4xl')) {
+    @media only screen and (min-width: theme('screens.5xl')) {
       height: 4000px;
     }
   }

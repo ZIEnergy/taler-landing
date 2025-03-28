@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="./public/css/style.css?v=1.0.9">
+  <link rel="stylesheet" href="./public/css/style.css?v=1.1.0">
 </head>
 <body style="overflow: hidden">
 
@@ -323,32 +323,54 @@
       </div>
     </section>
 
-    <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent mobile-video__section" id="mobile_wallet">
+    <div class="contain-paint--between-lg-4xl">
+      <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent mobile-video__section" id="mobile_wallet">
 
-      <div class="js-reveal-bottom-trigger"></div>
-      <div class="container js-reveal-bottom reveal--bottom mobile-video__wrapper">
-        <img
-          src="./public/img/glow1.png"
-          class="pointer-events-none select-none section__bg mdMax:hidden"
-          alt="" />
+        <div class="js-reveal-bottom-trigger"></div>
+        <div class="container js-reveal-bottom reveal--bottom mobile-video__wrapper">
+          <img
+            src="./public/img/glow1.png"
+            class="pointer-events-none select-none section__bg lgMax:hidden"
+            alt="" />
 
-        <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px] mdMax:mb-0 md:relative md:z-[1]">
-          <div class="md:max-w-[488px] mdMax:px-[30px]">
-            <div class="mdMax:text-center mb-[8px]">
-              <div class="subtitle2 subtitle2--reverse-gradient">Mobile</div>
+          <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px] mdMax:mb-0 md:relative md:z-[1]">
+            <div class="md:max-w-[488px] mdMax:px-[30px]">
+              <div class="mdMax:text-center mb-[8px]">
+                <div class="subtitle2 subtitle2--reverse-gradient">Mobile</div>
+              </div>
+              <h3 class="mb-[26px] mdMax:text-center">All your assets in one mobile place</h3>
+              <div class="flex gap-[8px] mdMax:flex-col mdMax:items-center">
+                <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                  <span>Google Play</span>
+                </a>
+              </div>
             </div>
-            <h3 class="mb-[26px] mdMax:text-center">All your assets in one mobile place</h3>
-            <div class="flex gap-[8px] mdMax:flex-col mdMax:items-center">
-              <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
-                <span>App Store</span>
-              </a>
-              <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
-                <span>Google Play</span>
-              </a>
+
+            <div class="mobile-video mdMax:!hidden">
+              <picture>
+                <source
+                  srcset="./public/img/iPhone@2x.webp"
+                  type="image/webp" />
+                <img
+                  src="./public/img/iPhone@2x.png"
+                  class="pointer-events-none select-none"
+                  alt="" />
+              </picture>
+              <div class="mobile-video__video-wrapper">
+                <img
+                  src="./public/videos/video2/video000.jpg"
+                  class="pointer-events-none select-none"
+                  alt="" />
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="mobile-video mdMax:!hidden">
+        <div class="flex items-center justify-center sticky top-0 left-0 md:!hidden min-h-screen">
+          <div class="mobile-video">
             <picture>
               <source
                 srcset="./public/img/iPhone@2x.webp"
@@ -366,119 +388,99 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="flex items-center justify-center sticky top-0 left-0 md:!hidden min-h-screen">
-        <div class="mobile-video">
-          <picture>
-            <source
-              srcset="./public/img/iPhone@2x.webp"
-              type="image/webp" />
-            <img
-              src="./public/img/iPhone@2x.png"
-              class="pointer-events-none select-none"
-              alt="" />
-          </picture>
-          <div class="mobile-video__video-wrapper">
-            <img
-              src="./public/videos/video2/video000.jpg"
-              class="pointer-events-none select-none"
-              alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
+      <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
+        <div class="js-reveal-bottom-trigger"></div>
 
-    <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
-      <div class="js-reveal-bottom-trigger"></div>
+        <div class="desktop-app__wrapper">
+          <div class="desktop-app__container">
 
-      <div class="desktop-app__wrapper">
-        <div class="desktop-app__container">
+            <picture>
+              <source
+                srcset="./public/img/glow1.webp"
+                type="image/webp" />
+              <img
+                src="./public/img/glow1.png"
+                class="pointer-events-none select-none section__bg lgMax:hidden"
+                alt="" />
+            </picture>
 
-          <picture>
-            <source
-              srcset="./public/img/glow1.webp"
-              type="image/webp" />
-            <img
-              src="./public/img/glow1.png"
-              class="pointer-events-none select-none section__bg mdMax:hidden"
-              alt="" />
-          </picture>
-
-          <div class="container mdMax:contain-paint">
-            <div class="js-reveal-bottom reveal--bottom relative z-10">
-              <div class="text-center mb-[8px]">
-                <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
-              </div>
-              <h3 class="mb-[26px] text-center">All features<br>
-                in a desktop</h3>
-              <div class="dropdown">
-                <div class="dropdown__selected">
-                  <div class="dropdown__selected-container">
-                    <span>macOS <i>Apple Silicon</i></span>
-                    <div class="dropdown__selected-arrow">
-                      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
-                      </svg>
+            <div class="container lgMax:contain-paint">
+              <div class="js-reveal-bottom reveal--bottom relative z-10">
+                <div class="text-center mb-[8px]">
+                  <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
+                </div>
+                <h3 class="mb-[26px] text-center">All features<br>
+                  in a desktop</h3>
+                <div class="dropdown">
+                  <div class="dropdown__selected">
+                    <div class="dropdown__selected-container">
+                      <span>macOS <i>Apple Silicon</i></span>
+                      <div class="dropdown__selected-arrow">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="dropdown__drop-list">
-                  <a href="#" class="dropdown__drop-list-item">
-                    <img src="./public/img/icons/icon-apple.svg" alt="">
-                    <span>macOS <i>Apple Silicon</i></span>
-                  </a>
-                  <a href="#" class="dropdown__drop-list-item">
-                    <img src="./public/img/icons/icon-apple.svg" alt="">
-                    <span>macOS <i>Intel</i></span>
-                  </a>
-                  <a href="#" class="dropdown__drop-list-item">
-                    <img src="./public/img/icons/icon-windows.svg" alt="">
-                    <span>Windows <i>Intel</i></span>
-                  </a>
-                  <a href="#" class="dropdown__drop-list-item">
-                    <img src="./public/img/icons/icon-windows.svg" alt="">
-                    <span>Windows <i>ARM</i></span>
-                  </a>
+                  <div class="dropdown__drop-list">
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="./public/img/icons/icon-apple.svg" alt="">
+                      <span>macOS <i>Apple Silicon</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="./public/img/icons/icon-apple.svg" alt="">
+                      <span>macOS <i>Intel</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="./public/img/icons/icon-windows.svg" alt="">
+                      <span>Windows <i>Intel</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="./public/img/icons/icon-windows.svg" alt="">
+                      <span>Windows <i>ARM</i></span>
+                    </a>
+                  </div>
                 </div>
+              </div>
+
+              <div class="desktop-app">
+                <picture>
+                  <source
+                    srcset="./public/img/desktop_01.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/desktop_01.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--1"
+                    alt="" />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./public/img/desktop_02.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/desktop_02.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--2"
+                    alt="" />
+                </picture>
+                <picture>
+                  <source
+                    srcset="./public/img/desktop_03.webp"
+                    type="image/webp" />
+                  <img
+                    src="./public/img/desktop_03.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--3"
+                    alt="" />
+                </picture>
               </div>
             </div>
 
-            <div class="desktop-app">
-              <picture>
-                <source
-                  srcset="./public/img/desktop_01.webp"
-                  type="image/webp" />
-                <img
-                  src="./public/img/desktop_01.png"
-                  class="pointer-events-none select-none desktop-app__img desktop-app__img--1"
-                  alt="" />
-              </picture>
-              <picture>
-                <source
-                  srcset="./public/img/desktop_02.webp"
-                  type="image/webp" />
-                <img
-                  src="./public/img/desktop_02.png"
-                  class="pointer-events-none select-none desktop-app__img desktop-app__img--2"
-                  alt="" />
-              </picture>
-              <picture>
-                <source
-                  srcset="./public/img/desktop_03.webp"
-                  type="image/webp" />
-                <img
-                  src="./public/img/desktop_03.png"
-                  class="pointer-events-none select-none desktop-app__img desktop-app__img--3"
-                  alt="" />
-              </picture>
-            </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section class="md:py-[100px] py-[32px]" id="staking">
       <div class="container mdMax:px-[56px]">
@@ -830,12 +832,12 @@
       </div>
     </section>
 
-    <section class="section section--glow1 md:pt-[100px] md:pb-[108px] py-[32px] js-reveal-parent" id="how_to_get_started">
+    <section class="section section--glow1 md:pt-[100px] md:pb-[108px] py-[32px] js-reveal-parent contain-paint--between-lg-4xl" id="how_to_get_started">
       <div class="js-reveal-bottom-trigger"></div>
       <img
         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
         data-src="./public/img/glow1.png"
-        class="lazyload pointer-events-none select-none section__bg mdMax:hidden"
+        class="lazyload pointer-events-none select-none section__bg lgMax:hidden"
         alt="" />
 
       <div class="container js-reveal-bottom reveal--bottom">
@@ -952,6 +954,6 @@
 </div>
 
 <script src="./public/js/vendor-min.js?v=1.0.8"></script>
-<script src="./public/js/scripts-min.js?v=1.0.9"></script>
+<script src="./public/js/scripts-min.js?v=1.1.0"></script>
 </body>
 </html>
