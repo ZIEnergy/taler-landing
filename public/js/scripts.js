@@ -161,22 +161,22 @@ function heroTextReveal() {
       var progress = Math.floor(100 * e.progress); // from 0 to 100
       var state = e.state; // e.g. 'DURING'
       var scrollDirection = e.scrollDirection; // 'FORWARD' or 'REVERSE'
-      console.log(state, scrollDirection, progress);
+      // console.log(state, scrollDirection, progress);
 
       if (state === 'DURING' && scrollDirection === 'FORWARD') {
-        if (progress >= 8) {
+        if (progress > 8) {
           $('.hero__down').fadeOut(300);
         }
       }
 
       if (state === 'DURING' && scrollDirection === 'REVERSE') {
-        if (progress <= 10) {
+        if (progress < 10) {
           $('.hero__down').fadeIn(300);
         }
       }
 
       if (state === 'AFTER' && scrollDirection === 'FORWARD') {
-        if (progress >= 8) {
+        if (progress > 8) {
           $('.hero__down').fadeOut(300);
         }
       }
@@ -447,7 +447,6 @@ jQuery(function ($) {
 
 });
 
-
 /*
 jQuery(function ($) {
   var $video = $('.intro-video video');
@@ -492,32 +491,6 @@ jQuery(function ($) {
 */
 
 jQuery(function ($) {
-  $('.lang-switcher__current').on('click', function (e) {
-    e.preventDefault();
-    $('.header__overlay').fadeToggle(300);
-    $('.lang-switcher__dropdown').fadeToggle({
-      duration: 300,
-      start: function () {
-        if ($(this).is(':visible')) {
-          $(this).css({
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          });
-        }
-      }
-    });
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
-      $('.lang-switcher__dropdown').fadeOut(300);
-      $('.header__overlay').fadeOut(300);
-    }
-  });
-});
-
-jQuery(function ($) {
 });
 
 jQuery(function ($) {
@@ -546,6 +519,33 @@ jQuery(function ($) {
     }, 500);
   });
 });
+
+jQuery(function ($) {
+  $('.lang-switcher__current').on('click', function (e) {
+    e.preventDefault();
+    $('.header__overlay').fadeToggle(300);
+    $('.lang-switcher__dropdown').fadeToggle({
+      duration: 300,
+      start: function () {
+        if ($(this).is(':visible')) {
+          $(this).css({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          });
+        }
+      }
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
+      $('.lang-switcher__dropdown').fadeOut(300);
+      $('.header__overlay').fadeOut(300);
+    }
+  });
+});
+
 
 
 jQuery(function ($) {

@@ -161,22 +161,22 @@ function heroTextReveal() {
       var progress = Math.floor(100 * e.progress); // from 0 to 100
       var state = e.state; // e.g. 'DURING'
       var scrollDirection = e.scrollDirection; // 'FORWARD' or 'REVERSE'
-      console.log(state, scrollDirection, progress);
+      // console.log(state, scrollDirection, progress);
 
       if (state === 'DURING' && scrollDirection === 'FORWARD') {
-        if (progress >= 8) {
+        if (progress > 8) {
           $('.hero__down').fadeOut(300);
         }
       }
 
       if (state === 'DURING' && scrollDirection === 'REVERSE') {
-        if (progress <= 10) {
+        if (progress < 10) {
           $('.hero__down').fadeIn(300);
         }
       }
 
       if (state === 'AFTER' && scrollDirection === 'FORWARD') {
-        if (progress >= 8) {
+        if (progress > 8) {
           $('.hero__down').fadeOut(300);
         }
       }
