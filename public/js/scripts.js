@@ -7,13 +7,13 @@ jQuery(function ($) {
     $('.js-reveal-bottom').each(function (index, node) {
       var that = $(this);
       var $triggerNode = $(that.parents('.js-reveal-parent')[0]).find('.js-reveal-bottom-trigger')[0];
-      
+
       var tween = gsap.fromTo(
         this,
         { opacity: 0, y: 100 },
         { opacity: 1, y: 0, ease: "power2.out" }
       );
-      
+
       new ScrollMagic.Scene({
         triggerElement: $triggerNode,
         triggerHook: 0.8, // show, when scrolled 10% into view
@@ -29,7 +29,7 @@ jQuery(function ($) {
     $('.js-reveal-right').each(function (index, node) {
       var that = $(this);
       var $triggerNode = $(that.parents('.js-reveal-parent')[0]).find('.js-reveal-right-trigger')[0];
-      
+
       var tween = gsap.fromTo(
         this,
         { opacity: 0, x: 100 },
@@ -99,11 +99,11 @@ function heroVideoAnimation(imagesCount) {
   // create tween
   var tween = TweenMax.to(obj, 0.5,
     {
-      curImg: images.length - 1,	// animate propery curImg to number of images
-      roundProps: "curImg",				// only integers so it can be used as an array index
-      repeat: 0,									// repeat 0 times
-      immediateRender: true,			// load first image automatically
-      ease: Linear.easeNone,			// show every image the same ammount of time
+      curImg: images.length - 1,  // animate propery curImg to number of images
+      roundProps: "curImg",       // only integers so it can be used as an array index
+      repeat: 0,                  // repeat 0 times
+      immediateRender: true,      // load first image automatically
+      ease: Linear.easeNone,      // show every image the same ammount of time
       onUpdate: function () {
         $(".hero__anim-img").attr("src", images[obj.curImg]); // set the image source
       },
@@ -209,11 +209,11 @@ function mobileVideoAnimation(imagesCount) {
   // create tween
   var tween = TweenMax.to(obj, 0.5,
     {
-      curImg: images.length - 1,	// animate propery curImg to number of images
-      roundProps: "curImg",				// only integers so it can be used as an array index
-      repeat: 0,									// repeat 0 times
-      immediateRender: true,			// load first image automatically
-      ease: Linear.easeNone,			// show every image the same ammount of time
+      curImg: images.length - 1,  // animate propery curImg to number of images
+      roundProps: "curImg",       // only integers so it can be used as an array index
+      repeat: 0,                  // repeat 0 times
+      immediateRender: true,      // load first image automatically
+      ease: Linear.easeNone,      // show every image the same ammount of time
       onUpdate: function () {
         $(".mobile-video__video-wrapper img").attr("src", images[obj.curImg]); // set the image source
       },
@@ -233,35 +233,21 @@ function mobileVideoAnimation(imagesCount) {
 
 jQuery(function ($) {
   let loadedImages = 0;
-  let loadedImages2 = 0;
   let totalImages = 0;
   let videoImages1 = 0;
   let videoImages2 = 0;
 
   function updateProgress(data) {
-    let percent = Math.floor((loadedImages / videoImages1) * 100);
-    $("#preloader .preloader__bar-filler").css("width", percent + "%");
+    let percent = Math.floor((loadedImages / totalImages) * 100);
+    $(".preloader__bar-filler").css("width", percent + "%");
 
-    if (loadedImages === videoImages1) {
+    if (loadedImages === totalImages) {
       $("#preloader").fadeOut(500, function () {
         $("#siteContent").css("visibility", "visible");
         $('body').css('overflow', '');
         heroVideoAnimation(videoImages1);
-        // mobileVideoAnimation(videoImages2);
-        heroTextReveal();
-        preloadImagesMobileVideo(data);
-      });
-    }
-  }
-
-  function updateProgressMobileVideo(data) {
-    let percent = Math.floor((loadedImages2 / videoImages2) * 100);
-    $(".preloader--2 .preloader__bar-filler").css("width", percent + "%");
-
-    if (loadedImages2 === videoImages2) {
-      $(".preloader--2").fadeOut(500, function () {
-        $('.mobile-video__video-wrapper > img').show();
         mobileVideoAnimation(videoImages2);
+        heroTextReveal();
       });
     }
   }
@@ -277,8 +263,7 @@ jQuery(function ($) {
     totalImages = folders.totalImages;
     videoImages1 = folders.imagesPerFolder.folder1;
     videoImages2 = folders.imagesPerFolder.folder2;
-    // let folderPaths = ["video1", "video2"];
-    let folderPaths = ["video1"];
+    let folderPaths = ["video1", "video2"];
 
     folderPaths.forEach((folder, index) => {
       let count = folders.imagesPerFolder[`folder${index + 1}`] || 0;
@@ -307,28 +292,6 @@ jQuery(function ($) {
     });
   }
 
-  function preloadImagesMobileVideo(folders) {
-    let count = folders.imagesPerFolder["folder2"] || 0;
-
-    for (let i = 0; i <= count - 1; i++) {
-      let imgPath;
-      imgPath = `./public/videos/video2/video${String(i).padStart(3, '0')}.jpg`;
-
-      if (isImageCached(imgPath)) {
-        loadedImages2++;
-        updateProgressMobileVideo(folders);
-      } else {
-        let img = new Image();
-        img.src = imgPath;
-
-        img.onload = img.onerror = function () {
-          loadedImages2++;
-          updateProgressMobileVideo(folders);
-        };
-      }
-    }
-  }
-
   // Fetch totalImages from config.json
   if ($('.hero').length) {
     $.getJSON('./public/config.json', function (data) {
@@ -337,6 +300,26 @@ jQuery(function ($) {
       console.error("Failed to load config.json");
     });
   }
+});
+
+jQuery(function ($) {
+
+  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
+    $('.cookie-banner').fadeIn(300);
+  }
+  
+  $('#accept-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+
+  $('#reject-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+  
 });
 
 jQuery(function ($) {
@@ -383,6 +366,50 @@ jQuery(function ($) {
   });
 
 });
+
+
+/*
+jQuery(function ($) {
+  var $video = $('.intro-video video');
+  var searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has('options') && searchParams.get('options') === 'skip-intro') {
+    $('body').removeClass('with-intro');
+    $('body').css('overflow', '');
+    $('.intro-video').addClass('is-finished');
+    $('.hero__text').addClass('show');
+    $(".site-content").addClass("show");
+    if ($video.length) {
+      $video[0].play();
+    }
+  } else {
+    $('body.with-intro').css('overflow', 'hidden');
+    if ($video.length) {
+      $video[0].play();
+
+      $video.on('timeupdate', function () {
+        // console.log(this.currentTime);
+        if (this.currentTime >= 1.5) {
+          $(".site-content").addClass("show");
+        }
+
+        if (this.currentTime >= 2) {
+          $('.hero__text').addClass('show');
+          // $('body').css('overflow', '');
+          $('.intro-video').addClass('is-finished');
+          $video.off('timeupdate');
+        }
+        $('html, body').animate({
+          scrollTop: 0
+        }, 0);
+      });
+
+      $video.on('ended', function () {
+        $('.hero').addClass("hero--show-bg");
+      });
+    } 
+  }
+});
+*/
 
 jQuery(function ($) {
 });
@@ -465,25 +492,33 @@ $(window).on('resize', function () {
 });
 
 jQuery(function ($) {
-
-  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
-    $('.cookie-banner').fadeIn(300);
-  }
-  
-  $('#accept-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-
-  $('#reject-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-  
 });
 
+jQuery(function ($) {
+  $('.lang-switcher__current').on('click', function (e) {
+    e.preventDefault();
+    $('.header__overlay').fadeToggle(300);
+    $('.lang-switcher__dropdown').fadeToggle({
+      duration: 300,
+      start: function () {
+        if ($(this).is(':visible')) {
+          $(this).css({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          });
+        }
+      }
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
+      $('.lang-switcher__dropdown').fadeOut(300);
+      $('.header__overlay').fadeOut(300);
+    }
+  });
+});
 
 jQuery(function ($) {
   $('.header__burger').on('click', function (e) {
@@ -513,53 +548,6 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-});
-
-
-/*
-jQuery(function ($) {
-  var $video = $('.intro-video video');
-  var searchParams = new URLSearchParams(window.location.search);
-  if (searchParams.has('options') && searchParams.get('options') === 'skip-intro') {
-    $('body').removeClass('with-intro');
-    $('body').css('overflow', '');
-    $('.intro-video').addClass('is-finished');
-    $('.hero__text').addClass('show');
-    $(".site-content").addClass("show");
-    if ($video.length) {
-      $video[0].play();
-    }
-  } else {
-    $('body.with-intro').css('overflow', 'hidden');
-    if ($video.length) {
-      $video[0].play();
-
-      $video.on('timeupdate', function () {
-        // console.log(this.currentTime);
-        if (this.currentTime >= 1.5) {
-          $(".site-content").addClass("show");
-        }
-
-        if (this.currentTime >= 2) {
-          $('.hero__text').addClass('show');
-          // $('body').css('overflow', '');
-          $('.intro-video').addClass('is-finished');
-          $video.off('timeupdate');
-        }
-        $('html, body').animate({
-          scrollTop: 0
-        }, 0);
-      });
-
-      $video.on('ended', function () {
-        $('.hero').addClass("hero--show-bg");
-      });
-    } 
-  }
-});
-*/
-
-jQuery(function ($) {
   $('.js-scroll-to').on('click', function(e) {
     e.preventDefault();
 
@@ -575,28 +563,3 @@ jQuery(function ($) {
   });
 });
 
-jQuery(function ($) {
-  $('.lang-switcher__current').on('click', function (e) {
-    e.preventDefault();
-    $('.header__overlay').fadeToggle(300);
-    $('.lang-switcher__dropdown').fadeToggle({
-      duration: 300,
-      start: function () {
-        if ($(this).is(':visible')) {
-          $(this).css({
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          });
-        }
-      }
-    });
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
-      $('.lang-switcher__dropdown').fadeOut(300);
-      $('.header__overlay').fadeOut(300);
-    }
-  });
-});
