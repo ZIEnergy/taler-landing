@@ -340,23 +340,48 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-
-  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
-    $('.cookie-banner').fadeIn(300);
-  }
-  
-  $('#accept-cookies').on('click', function (e) {
+  $('.dropdown__selected').on('click', function (e) {
     e.preventDefault();
-    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
+    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
+    $(this).parent().toggleClass('is-open');
   });
 
-  $('#reject-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
+      $('.dropdown__drop-list').fadeOut(300);
+      $('.dropdown').removeClass('is-open');
+    }
   });
-  
+});
+
+jQuery(function ($) {
+
+  $('.faq__question').on('click', function(e) {
+    e.preventDefault();
+    if ($(this).parent().hasClass('is-open')) {
+      $(this).parent().removeClass('is-open');
+      $(this).next().slideUp({
+        duration: 500,
+        start: function() {
+          $(this).find('.faq__answer-wrapper').css('opacity', '0');
+        }
+      });
+    } else {
+      $(this).parent().addClass('is-open');
+      $(this).next().slideDown({
+        duration: 500,
+        // complete: function() {
+        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
+        // },
+        progress: function(animation, progress, remainingMs) {
+          if (remainingMs < 100) {
+            $(this).find('.faq__answer-wrapper').css('opacity', '1');
+          }
+        }
+      });
+    }
+  });
+
 });
 
 jQuery(function ($) {
@@ -440,48 +465,54 @@ $(window).on('resize', function () {
 });
 
 jQuery(function ($) {
-  $('.dropdown__selected').on('click', function (e) {
+
+  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
+    $('.cookie-banner').fadeIn(300);
+  }
+  
+  $('#accept-cookies').on('click', function (e) {
     e.preventDefault();
-    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
-    $(this).parent().toggleClass('is-open');
+    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
   });
 
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
-      $('.dropdown__drop-list').fadeOut(300);
-      $('.dropdown').removeClass('is-open');
-    }
+  $('#reject-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+  
+});
+
+
+jQuery(function ($) {
+  $('.header__burger').on('click', function (e) {
+    e.preventDefault();
+    $('.menu').fadeIn(500);
+    $('body').css('overflow', 'hidden');
+  });
+  $('.menu__burger').on('click', function (e) {
+    e.preventDefault();
+    $('.menu').fadeOut(500, function() {
+      $('body').css('overflow', '');
+    });
+  });
+
+  $('.menu__list:not(.no-scroll) li a').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+
+    $('.menu').fadeOut(500);
+    $('body').css('overflow', '');
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
   });
 });
 
 jQuery(function ($) {
-
-  $('.faq__question').on('click', function(e) {
-    e.preventDefault();
-    if ($(this).parent().hasClass('is-open')) {
-      $(this).parent().removeClass('is-open');
-      $(this).next().slideUp({
-        duration: 500,
-        start: function() {
-          $(this).find('.faq__answer-wrapper').css('opacity', '0');
-        }
-      });
-    } else {
-      $(this).parent().addClass('is-open');
-      $(this).next().slideDown({
-        duration: 500,
-        // complete: function() {
-        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
-        // },
-        progress: function(animation, progress, remainingMs) {
-          if (remainingMs < 100) {
-            $(this).find('.faq__answer-wrapper').css('opacity', '1');
-          }
-        }
-      });
-    }
-  });
-
 });
 
 
@@ -529,6 +560,19 @@ jQuery(function ($) {
 */
 
 jQuery(function ($) {
+  $('.js-scroll-to').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+    
+    /*$container.scrollTop(
+      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+    );*/
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
+  });
 });
 
 jQuery(function ($) {
@@ -554,49 +598,5 @@ jQuery(function ($) {
       $('.lang-switcher__dropdown').fadeOut(300);
       $('.header__overlay').fadeOut(300);
     }
-  });
-});
-
-jQuery(function ($) {
-  $('.header__burger').on('click', function (e) {
-    e.preventDefault();
-    $('.menu').fadeIn(500);
-    $('body').css('overflow', 'hidden');
-  });
-  $('.menu__burger').on('click', function (e) {
-    e.preventDefault();
-    $('.menu').fadeOut(500, function() {
-      $('body').css('overflow', '');
-    });
-  });
-
-  $('.menu__list:not(.no-scroll) li a').on('click', function(e) {
-    e.preventDefault();
-
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
-
-    $('.menu').fadeOut(500);
-    $('body').css('overflow', '');
-    $container.animate({
-      scrollTop: $scrollTo.offset().top
-    }, 500);
-  });
-});
-
-
-jQuery(function ($) {
-  $('.js-scroll-to').on('click', function(e) {
-    e.preventDefault();
-
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
-    
-    /*$container.scrollTop(
-      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
-    );*/
-    $container.animate({
-      scrollTop: $scrollTo.offset().top
-    }, 500);
   });
 });
