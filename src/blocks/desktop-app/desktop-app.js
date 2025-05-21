@@ -31,6 +31,9 @@ $(window).on('load', function () {
       // console.log(progress, state, scrollDirection);
       
       if (state === 'DURING' && scrollDirection === 'FORWARD') {
+        if (progress > 10) {
+          $('#desktop-app-heading').fadeOut(300);
+        }
         if (progress > 20 && progress < 60) {
           // console.log('FORWARD: first animation');
           animClasses.forEach(function (animClass) {
@@ -48,6 +51,9 @@ $(window).on('load', function () {
       }
 
       if (state === 'DURING' && scrollDirection === 'REVERSE') {
+        if (progress < 10) {
+          $('#desktop-app-heading').fadeIn(300);
+        }
         if (progress < 20) {
           animClasses.forEach(function (animClass) {
             $desktopApp.removeClass(animClass);
