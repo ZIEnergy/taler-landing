@@ -11,8 +11,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      // 'sans': ['Space Grotesk', 'sans-serif'],
-      'sans': ['\'Inter\'', 'sans-serif'],
+      'sans': ['\'Space Grotesk\'', 'sans-serif'],
+      'inter': ['\'Inter\'', 'sans-serif'],
     },
     extend: {
       fontSize: {
