@@ -398,9 +398,50 @@
       <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
         <div class="js-reveal-bottom-trigger"></div>
 
+        <div class="container lgMax:contain-paint desktop-app__heading--static">
+          <div class="desktop-app__heading">
+            <div class="text-center mb-[8px]">
+              <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
+            </div>
+            <h3 class="mb-[26px] text-center">All features<br>
+              in a desktop</h3>
+
+            <div class="dropdown">
+              <div class="dropdown__selected">
+                <div class="dropdown__selected-container">
+                  <span>macOS <i>Apple Silicon</i></span>
+                  <div class="dropdown__selected-arrow">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dropdown__drop-list">
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="./public/img/icons/icon-apple.svg" alt="">
+                  <span>macOS <i>Apple Silicon</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="./public/img/icons/icon-apple.svg" alt="">
+                  <span>macOS <i>Intel</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="./public/img/icons/icon-windows.svg" alt="">
+                  <span>Windows <i>Intel</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="./public/img/icons/icon-windows.svg" alt="">
+                  <span>Windows <i>ARM</i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="desktop-app__wrapper">
           <div class="desktop-app__container">
-
             <picture>
               <source
                 media="(min-width:768px)"
@@ -413,14 +454,13 @@
             </picture>
 
             <div class="container lgMax:contain-paint">
-              <div class="js-reveal-bottom reveal--bottom relative z-10">
-                <div id="desktop-app-heading">
-                  <div class="text-center mb-[8px]">
-                    <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
-                  </div>
-                  <h3 class="mb-[26px] text-center">All features<br>
-                    in a desktop</h3>
+              <div class="desktop-app__heading desktop-app__heading--absolute">
+                <div class="text-center mb-[8px]">
+                  <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
                 </div>
+                <h3 class="mb-[26px] text-center">All features<br>
+                  in a desktop</h3>
+
                 <div class="dropdown">
                   <div class="dropdown__selected">
                     <div class="dropdown__selected-container">
@@ -453,7 +493,7 @@
                   </div>
                 </div>
               </div>
-
+              
               <div class="desktop-app">
                 <picture>
                   <source
@@ -484,8 +524,8 @@
                 </picture>
               </div>
             </div>
-
           </div>
+
         </div>
       </section>
     </div>

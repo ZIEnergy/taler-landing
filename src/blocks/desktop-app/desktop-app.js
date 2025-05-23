@@ -32,7 +32,9 @@ $(window).on('load', function () {
       
       if (state === 'DURING' && scrollDirection === 'FORWARD') {
         if (progress > 10) {
-          $('#desktop-app-heading').fadeOut(300);
+          if (mq.matches) {
+            $('.desktop-app__heading').addClass('is-hidden');
+          }
         }
         if (progress > 20 && progress < 60) {
           // console.log('FORWARD: first animation');
@@ -52,7 +54,9 @@ $(window).on('load', function () {
 
       if (state === 'DURING' && scrollDirection === 'REVERSE') {
         if (progress < 10) {
-          $('#desktop-app-heading').fadeIn(300);
+          if (mq.matches) {
+            $('.desktop-app__heading').removeClass('is-hidden');
+          }
         }
         if (progress < 20) {
           animClasses.forEach(function (animClass) {
