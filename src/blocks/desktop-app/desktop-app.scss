@@ -125,6 +125,8 @@
       }
 
       @media (max-width: theme('screens.mdMax.max')) {
+        position: relative;
+        z-index: 30;
         display: block;
       }
     }

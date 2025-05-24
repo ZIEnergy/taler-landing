@@ -1,38 +1,3 @@
-jQuery(function ($) {
-  $('.dropdown__selected').on('click', function (e) {
-    e.preventDefault();
-    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
-    $(this).parent().toggleClass('is-open');
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
-      $('.dropdown__drop-list').fadeOut(300);
-      $('.dropdown').removeClass('is-open');
-    }
-  });
-});
-
-jQuery(function ($) {
-
-  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
-    $('.cookie-banner').fadeIn(300);
-  }
-  
-  $('#accept-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-
-  $('#reject-cookies').on('click', function (e) {
-    e.preventDefault();
-    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
-    $('.cookie-banner').fadeOut(300);
-  });
-  
-});
-
 var controller = new ScrollMagic.Controller();
 var mq = window.matchMedia( "(min-width: 767.98px)" );
 var mqMob = window.matchMedia( "(max-width: 768px)" );
@@ -338,36 +303,6 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-
-  $('.faq__question').on('click', function(e) {
-    e.preventDefault();
-    if ($(this).parent().hasClass('is-open')) {
-      $(this).parent().removeClass('is-open');
-      $(this).next().slideUp({
-        duration: 500,
-        start: function() {
-          $(this).find('.faq__answer-wrapper').css('opacity', '0');
-        }
-      });
-    } else {
-      $(this).parent().addClass('is-open');
-      $(this).next().slideDown({
-        duration: 500,
-        // complete: function() {
-        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
-        // },
-        progress: function(animation, progress, remainingMs) {
-          if (remainingMs < 100) {
-            $(this).find('.faq__answer-wrapper').css('opacity', '1');
-          }
-        }
-      });
-    }
-  });
-
-});
-
-jQuery(function ($) {
 });
 
 function desktopAppHeightHandler(height) {
@@ -457,6 +392,71 @@ $(window).on('resize', function () {
   desktopAppHeightHandler($('.desktop-app__img--1').height());
 });
 
+jQuery(function ($) {
+
+  if (!$.cookie('cookiesAccepted') || $.cookie('cookiesAccepted') === 'false') {
+    $('.cookie-banner').fadeIn(300);
+  }
+  
+  $('#accept-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'true', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+
+  $('#reject-cookies').on('click', function (e) {
+    e.preventDefault();
+    $.cookie('cookiesAccepted', 'false', { expires: 365, path: '/' });
+    $('.cookie-banner').fadeOut(300);
+  });
+  
+});
+
+jQuery(function ($) {
+
+  $('.faq__question').on('click', function(e) {
+    e.preventDefault();
+    if ($(this).parent().hasClass('is-open')) {
+      $(this).parent().removeClass('is-open');
+      $(this).next().slideUp({
+        duration: 500,
+        start: function() {
+          $(this).find('.faq__answer-wrapper').css('opacity', '0');
+        }
+      });
+    } else {
+      $(this).parent().addClass('is-open');
+      $(this).next().slideDown({
+        duration: 500,
+        // complete: function() {
+        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
+        // },
+        progress: function(animation, progress, remainingMs) {
+          if (remainingMs < 100) {
+            $(this).find('.faq__answer-wrapper').css('opacity', '1');
+          }
+        }
+      });
+    }
+  });
+
+});
+
+jQuery(function ($) {
+  $('.dropdown__selected').on('click', function (e) {
+    e.preventDefault();
+    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
+    $(this).parent().toggleClass('is-open');
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
+      $('.dropdown__drop-list').fadeOut(300);
+      $('.dropdown').removeClass('is-open');
+    }
+  });
+});
+
 
 /*
 jQuery(function ($) {
@@ -533,6 +533,22 @@ jQuery(function ($) {
 
 
 jQuery(function ($) {
+  $('.js-scroll-to').on('click', function(e) {
+    e.preventDefault();
+
+    var $container = $('html, body'),
+      $scrollTo = $($($(this).attr('href')));
+    
+    /*$container.scrollTop(
+      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+    );*/
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
+  });
+});
+
+jQuery(function ($) {
   $('.lang-switcher__current').on('click', function (e) {
     e.preventDefault();
     $('.header__overlay').fadeToggle(300);
@@ -555,21 +571,5 @@ jQuery(function ($) {
       $('.lang-switcher__dropdown').fadeOut(300);
       $('.header__overlay').fadeOut(300);
     }
-  });
-});
-
-jQuery(function ($) {
-  $('.js-scroll-to').on('click', function(e) {
-    e.preventDefault();
-
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
-    
-    /*$container.scrollTop(
-      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
-    );*/
-    $container.animate({
-      scrollTop: $scrollTo.offset().top
-    }, 500);
   });
 });
