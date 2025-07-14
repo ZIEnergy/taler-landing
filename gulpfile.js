@@ -46,6 +46,11 @@ const paths = {
     dest: './public/js',
     watch: './src/blocks/**/*.js',
   },
+  additional_js: {
+    src: './src/js/**/*.js',
+    dest: './public/js',
+    watch: './src/js/**/*.js',
+  },
   images: {
     src: ['./src/images/*', './src/images/**/*', './src/images/**/**/*'],
     dest: './public/img',
@@ -65,6 +70,11 @@ const paths = {
     src: ['./src/videos/*', './src/videos/**/*'],
     dest: './public/videos',
     watch: './src/videos/*'
+  },
+  lang: {
+    src: './src/lang/**/*',
+    dest: './public/lang',
+    watch: './src/lang/**/*',
   },
 };
 
@@ -147,6 +157,15 @@ gulp.task('scripts', function () {
     }));
 });
 
+gulp.task('additional_js', function () {
+  return gulp.src(paths.additional_js.src)
+    .pipe(plumber())
+    .pipe(gulp.dest(paths.additional_js.dest))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
 gulp.task('images', function () {
   return gulp.src(paths.images.src, {since: gulp.lastRun('images')})
     .pipe(plumber())
@@ -193,6 +212,15 @@ gulp.task('videos', function () {
     }));
 });
 
+gulp.task('lang', function () {
+  return gulp.src(paths.lang.src)
+    .pipe(plumber())
+    .pipe(gulp.dest(paths.lang.dest))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
 gulp.task('server', function () {
   browserSync.init({
     server: {
@@ -203,12 +231,14 @@ gulp.task('server', function () {
   gulp.watch(paths.html.watch, gulp.parallel('html'));
   gulp.watch(paths.html.watch, gulp.parallel('styles'));
   gulp.watch(paths.css.watch, gulp.parallel('styles'));
+  gulp.watch(paths.additional_js.watch, gulp.parallel('additional_js'));
   gulp.watch(paths.jsVendor.watch, gulp.parallel('scriptsVendor'));
   gulp.watch(paths.js.watch, gulp.parallel('scripts'));
   gulp.watch(paths.js.watch, gulp.parallel('styles'));
   gulp.watch(paths.images.watch, gulp.parallel('images'));
   gulp.watch(paths.fonts.watch, gulp.parallel('fonts'));
   gulp.watch(paths.videos.watch, gulp.parallel('videos'));
+  gulp.watch(paths.lang.watch, gulp.parallel('lang'));
   gulp.watch('./public/videos/**/*', gulp.parallel('generateConfig'));
 });
 
@@ -216,12 +246,14 @@ gulp.task('watch', function () {
   gulp.watch(paths.html.watch, gulp.parallel('html'));
   gulp.watch(paths.html.watch, gulp.parallel('styles'));
   gulp.watch(paths.css.watch, gulp.parallel('styles'));
+  gulp.watch(paths.additional_js.watch, gulp.parallel('additional_js'));
   gulp.watch(paths.jsVendor.watch, gulp.parallel('scriptsVendor'));
   gulp.watch(paths.js.watch, gulp.parallel('scripts'));
   gulp.watch(paths.js.watch, gulp.parallel('styles'));
   gulp.watch(paths.images.watch, gulp.parallel('images'));
   gulp.watch(paths.fonts.watch, gulp.parallel('fonts'));
   gulp.watch(paths.videos.watch, gulp.parallel('videos'));
+  gulp.watch(paths.lang.watch, gulp.parallel('lang'));
   // gulp.watch(paths.webfonts.watch, gulp.parallel('webfonts'));
   gulp.watch('./public/videos/**/*', gulp.parallel('generateConfig'));
 });
@@ -229,10 +261,12 @@ gulp.task('watch', function () {
 gulp.task('dev', gulp.series(
   'clean',
   'styles',
+  'additional_js',
   'scriptsVendor',
   'scripts',
   'fonts',
   'videos',
+  'lang',
   'images',
   'images-webp',
   'generateConfig',
@@ -242,10 +276,12 @@ gulp.task('dev', gulp.series(
 gulp.task('build', gulp.series(
   'clean',
   'styles',
+  'additional_js',
   'scriptsVendor',
   'scripts',
   'fonts',
   'videos',
+  'lang',
   'images',
   'images-webp',
   'generateConfig',
