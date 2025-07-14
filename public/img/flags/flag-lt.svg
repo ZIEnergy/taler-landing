@@ -1,0 +1,14 @@
+<svg width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0_4001_361)">
+    <!-- Желтая, зеленая, красная полосы -->
+    <path d="M0 0h30v10H0z" fill="#FFD700"/>
+    <path d="M0 10h30v10H0z" fill="#006A44"/>
+    <path d="M0 20h30v10H0z" fill="#C1272D"/>
+  </g>
+  <!-- Круглый clipPath (радиус 15, центр 15,15) -->
+  <defs>
+    <clipPath id="clip0_4001_361">
+      <circle cx="15" cy="15" r="15" fill="#fff"/>
+    </clipPath>
+  </defs>
+</svg>

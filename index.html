@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="./public/css/style.css?v=1.1.5">
 </head>
 <body style="overflow: hidden">
@@ -39,124 +39,72 @@
   <div class="menu">
     <div class="menu__container">
       <button type="button" class="menu__burger"></button>
-      <ul class="menu__list">
-        <li>
-          <a href="#mobile_wallet">Mobile wallet</a>
-        </li>
-        <li>
-          <a href="#desktop_wallet">Desktop wallet</a>
-        </li>
-        <li>
-          <a href="#staking">Staking</a>
-        </li>
-        <li>
-          <a href="#vivid_staking">Vivid Staking</a>
-        </li>
-        <li>
-          <a href="#blockchain">Blockchain</a>
-        </li>
-        <li>
-          <a href="#security">Security</a>
-        </li>
-        <li>
-          <a href="#faq">FAQ</a>
-        </li>
-        <li>
-          <a href="#how_to_get_started">How to get started</a>
-        </li>
-      </ul>
-
-      <ul class="menu__lang-switcher">
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_fr.svg" alt="">
-            French
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_gb.svg" alt="">
-            English
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_it.svg" alt="">
-            Italian
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_de.svg" alt="">
-            Deutsch
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_ch.svg" alt="">
-            Chinese
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_jp.svg" alt="">
-            Japanese
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
+          <ul class="menu__list no-scroll">
+      <li>
+        <a href="./#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet"></a>
+      </li>
+      <li>
+        <a href="./#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet"></a>
+      </li>
+      <li>
+        <a href="./#staking" data-translate="button_staking" id="button_staking"></a>
+      </li>
+      <li>
+        <a href="./#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking"></a>
+      </li>
+      <li>
+        <a href="./#blockchain" data-translate="button_blockchain" id="button_blockchain"></a>
+      </li>
+      <li>
+        <a href="./#security" data-translate="button_security" id="button_security"></a>
+      </li>
+      <li>
+        <a href="./#faq" data-translate="button_faq" id="button_faq"></a>
+      </li>
+      <li>
+        <a href="./#how_to_get_started" data-translate="button_get_started" id="button_get_started"></a>
+      </li>
+    </ul>
+</div>
+</div>
+</div>
   <div class="header__overlay"></div>
   <header class="header">
     <button type="button" class="header__burger"></button>
-    <div class="lang-switcher">
-      <button type="button" class="lang-switcher__current">
-      <span>
-        <img src="./public/img/flags/flag_gb.svg?v=2" alt="">
-        <span>English</span>
-      </span>
-      </button>
+        <div class="lang-switcher">
+          <button type="button" class="lang-switcher__current" id="language_switcher">
+            <span>
+              <img src="./public/img/flags/flag-en.svg" alt="" data-lang-flag>
+              <span data-translate="current_lang" id="current_lang"></span>
+            </span>
+          </button>
+          <!--<div class="lang-switcher__overflow"></div>-->
+          <ul class="lang-switcher__dropdown">
+            <li>
+              <a href="#" data-lang ="fr" ><img src="./public/img/flags/flag-fr.svg" alt=""><span data-translate="lng_fr" id="lng_fr"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="en"><img src="./public/img/flags/flag-en.svg" alt=""><span data-translate="lng_en" id="lng_en"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="it"><img src="./public/img/flags/flag-it.svg" alt=""><span data-translate="lng_it" id="lng_it"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="de"><img src="./public/img/flags/flag-de.svg" alt=""><span data-translate="lng_de" id="lng_de"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="lt"><img src="./public/img/flags/flag-lt.svg" alt=""><span data-translate="lng_lt" id="lng_lt"></span></a>
+            </li>
+			<li>
+              <a href="#" data-lang="es"><img src="./public/img/flags/flag-es.svg" alt=""><span data-translate="lng_es" id="lng_es"></span></a>
+            </li>
+			<li>
+              <a href="#" data-lang="ru"><img src="./public/img/flags/flag-ru.svg" alt=""><span data-translate="lng_ru" id="lng_ru"></span></a>
+            </li>
+          </ul>
+        </div>
 
-      <ul class="lang-switcher__dropdown">
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_fr.svg?v=2" alt="">
-            French
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_gb.svg?v=2" alt="">
-            English
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_it.svg?v=2" alt="">
-            Italian
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_de.svg?v=2" alt="">
-            Deutsch
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_ch.svg?v=2" alt="">
-            Chinese
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./public/img/flags/flag_jp.svg?v=2" alt="">
-            Japanese
-          </a>
-        </li>
-      </ul>
-    </div>
+
   </header>
 
   <main class="main">
@@ -164,7 +112,7 @@
       <div class="hero__anim-wrapper">
         <img src="./public/videos/video1/intro_video000.jpg" alt="" class="hero__anim-img">
         <div class="container hero__text-container">
-          <h1 class="hero__text">Secure and convenient cryptocurrency wallet in one app</h1>
+          <h1 class="hero__text" data-translate="hero_text"></h1>
         </div>
 
         <div class="hero__down">
@@ -184,8 +132,8 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <h4>Universal</h4>
-            <p class="text-gray">Whether you're a beginner or a pro, Taler Wallet makes Web3 simple and convenient</p>
+            <h4 data-translate="reveal_text_1"></h4>
+            <p class="text-gray" data-translate="reveal_text_2"></p>
           </div>
 
           <div class="flex flex-col items-start gap-[20px]">
@@ -194,8 +142,8 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <h4>Multi-network</h4>
-            <p class="text-gray">Interact with any token or decentralized application in the core L1 and L2 networks</p>
+            <h4 data-translate="reveal_text_3"></h4>
+            <p class="text-gray" data-translate="reveal_text_4"></p>
           </div>
 
           <div class="flex flex-col items-start gap-[20px]">
@@ -204,8 +152,8 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <h4>Flexible</h4>
-            <p class="text-gray">Choose any of 22 languages and track your balance in over 22 fiat currencies</p>
+            <h4 data-translate="reveal_text_5"></h4>
+            <p class="text-gray" data-translate="reveal_text_6"></p>
           </div>
         </div>
       </div>
@@ -214,12 +162,12 @@
     <section class="md:pt-[110px] md:pb-[134px] py-[32px] js-reveal-parent">
       <div class="js-reveal-bottom-trigger"></div>
       <div class="container js-reveal-bottom reveal--bottom">
-        <h2 class="text-center mb-[40px] md:mb-[84px]">Taler wallet</h2>
+        <h2 class="text-center mb-[40px] md:mb-[84px]" data-translate="reveal_text_7"></h2>
         <div class="grid md:grid-cols-2 md:gap-[20px] grid-cols-1 gap-[16px]">
           <div class="feature-box">
             <div class="feature-box__content">
-              <h4 class="mb-[32px]">Sending tokens</h4>
-              <p class="text-gray">Easily send hundreds of tokens and perform cross-chain transfers on the Taler network in seconds</p>
+              <h4 class="mb-[32px]" data-translate="reveal_text_8"></h4>
+              <p class="text-gray" data-translate="reveal_text_9"></p>
             </div>
             <div class="feature-box__img">
               <picture>
@@ -244,8 +192,8 @@
 
           <div class="feature-box">
             <div class="feature-box__content">
-              <h4 class="mb-[32px]">Buying tokens</h4>
-              <p class="text-gray">Start or simply top up your balance with our on-ramp providers</p>
+              <h4 class="mb-[32px]" data-translate="reveal_text_10"></h4>
+              <p class="text-gray" data-translate="reveal_text_11"></p>
             </div>
             <div class="feature-box__img">
               <picture>
@@ -270,8 +218,8 @@
 
           <div class="feature-box">
             <div class="feature-box__content">
-              <h4 class="mb-[32px]">Token exchange</h4>
-              <p class="text-gray">Easily exchange tokens using Taler's proprietary interface</p>
+              <h4 class="mb-[32px]" data-translate="reveal_text_12"></h4>
+              <p class="text-gray" data-translate="reveal_text_13"></p>
             </div>
             <div class="feature-box__img">
               <picture>
@@ -296,8 +244,8 @@
 
           <div class="feature-box">
             <div class="feature-box__content">
-              <h4 class="mb-[32px]">Transaction History</h4>
-              <p class="text-gray">View past transactions with the fiat currency exchange rate at the time of the transaction</p>
+              <h4 class="mb-[32px]" data-translate="reveal_text_14"></h4>
+              <p class="text-gray" data-translate="reveal_text_15"></p>
             </div>
             <div class="feature-box__img">
               <picture>
@@ -336,9 +284,9 @@
           <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px] mdMax:mb-0 relative z-[1]">
             <div class="md:max-w-[488px] mdMax:px-[30px]">
               <div class="mdMax:text-center mb-[8px]">
-                <div class="subtitle2 subtitle2--reverse-gradient">Mobile</div>
+                <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_16"></div>
               </div>
-              <h3 class="mb-[26px] mdMax:text-center">All your assets in one mobile place</h3>
+              <h3 class="mb-[26px] mdMax:text-center" data-translate="reveal_text_17"></h3>
               <div class="flex gap-[8px] mdMax:flex-col mdMax:items-center">
                 <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
                   <span>App Store</span>
@@ -374,7 +322,7 @@
             src="./public/img/glow1-mob.png?v=2"
             class="pointer-events-none select-none section__bg section__bg--mobile-video lg:hidden"
             alt="" />
-          
+
           <div class="mobile-video">
             <picture>
               <source
@@ -401,10 +349,9 @@
         <div class="container lgMax:contain-paint desktop-app__heading--static">
           <div class="desktop-app__heading">
             <div class="text-center mb-[8px]">
-              <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
+              <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_18"></div>
             </div>
-            <h3 class="mb-[26px] text-center">All features<br>
-              in a desktop</h3>
+            <h3 class="mb-[26px] text-center" data-translate="reveal_text_19"></h3>
 
             <div class="dropdown">
               <div class="dropdown__selected">
@@ -456,10 +403,9 @@
             <div class="container lgMax:contain-paint">
               <div class="desktop-app__heading desktop-app__heading--absolute">
                 <div class="text-center mb-[8px]">
-                  <div class="subtitle2 subtitle2--reverse-gradient">Desktop</div>
+                  <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_18"></div>
                 </div>
-                <h3 class="mb-[26px] text-center">All features<br>
-                  in a desktop</h3>
+                <h3 class="mb-[26px] text-center" data-translate="reveal_text_19"></h3>
 
                 <div class="dropdown">
                   <div class="dropdown__selected">
@@ -493,7 +439,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="desktop-app">
                 <picture>
                   <source
@@ -535,10 +481,10 @@
         <div class="flex mdMax:flex-col mdMax:gap-[40px] relative js-reveal-parent">
           <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
           <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
-            <h2>Super simple staking</h2>
+            <h2 data-translate="reveal_text_20"></h2>
           </div>
           <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-            <div class="subtitle1 js-reveal-bottom reveal--bottom">Taler Wallet takes away the hassle of steaking by offering you the most convenient and profitable way to get started! Forget nomination pools, direct steaking and validators - we do it all for you.</div>
+            <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_21"></div>
 
             <div class="relative js-reveal-parent">
               <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
@@ -563,8 +509,8 @@
       <div class="js-reveal-bottom-trigger"></div>
       <div class="container js-reveal-bottom reveal--bottom">
         <div class="grid grid-cols-1 gap-[16px] md:grid md:grid-cols-2 md:gap-[40px]">
-          <h2 class="mdMax:order-1 mdMax:mb-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]">Regular Staking</h2>
-          <h2 class="mdMax:order-4 mdMax:my-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" id="vivid_staking">Vivid Staking</h2>
+          <h2 class="mdMax:order-1 mdMax:mb-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" data-translate="reveal_text_22"></h2>
+          <h2 class="mdMax:order-4 mdMax:my-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" id="vivid_staking" data-translate="reveal_text_23"></h2>
 
           <div class="mdMax:order-2 feature-box feature-box--type2">
             <img
@@ -572,7 +518,7 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <div class="subtitle2 mt-[20px]">Payouts once a day</div>
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_24"></div>
           </div>
 
           <div class="mdMax:order-5 feature-box feature-box--type2">
@@ -581,8 +527,7 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <div class="subtitle2 mt-[20px]">Money is frozen for<br class="mdMax:hidden">
-              a selected period of time</div>
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_25"></div>
           </div>
 
           <div class="mdMax:order-3 feature-box feature-box--type2">
@@ -591,7 +536,7 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <div class="subtitle2 mt-[20px]">Money is not frozen</div>
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_26"></div>
           </div>
 
           <div class="mdMax:order-6 feature-box feature-box--type2">
@@ -600,8 +545,7 @@
               alt=""
               class="pointer-events-none select-none"
             >
-            <div class="subtitle2 mt-[20px]">Payments at<br class="mdMax:hidden">
-              the end of the term</div>
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_27"></div>
           </div>
         </div>
       </div>
@@ -620,9 +564,9 @@
 
         <div class="container relative mdMax:px-[56px] js-reveal-parent">
           <div class="js-reveal-bottom-trigger"></div>
-          <h2 class="md:mb-[80px] mb-[40px] md:max-w-[508px] js-reveal-bottom reveal--bottom">Tokenized smart contracts</h2>
+          <h2 class="md:mb-[80px] mb-[40px] md:max-w-[508px] js-reveal-bottom reveal--bottom" data-translate="reveal_text_28"></h2>
           <div class="mdMax:flex mdMax:flex-col-reverse mdMax:gap-[40px] relative">
-            <p class="p-lg text-gray md:max-w-[508px] js-reveal-bottom reveal--bottom">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.</p>
+            <p class="p-lg text-gray md:max-w-[508px] js-reveal-bottom reveal--bottom" data-translate="reveal_text_29"></p>
             <div class="relative js-reveal-parent">
               <div class="js-reveal-right-trigger absolute top-0 left-0"></div>
               <div class="floating-cubes reveal--right js-reveal-right">
@@ -658,8 +602,7 @@
               <h2>Fast blockchain</h2>
             </div>
             <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-              <div class="subtitle1 js-reveal-bottom reveal--bottom">Taler's blockchain achieves over 3.5 million transactions per second thanks to its unique Proof-of-Utility consensus.<br><br>
-                This capability makes Taler an ideal “overlay network” for integration with other blockchain systems such as Bitcoin.</div>
+              <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_30"></div>
 
               <div class="relative js-reveal-parent">
                 <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
@@ -687,11 +630,10 @@
         <div class="js-reveal-bottom-trigger"></div>
         <div class="flex mdMax:flex-col mdMax:gap-[40px]">
           <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
-            <h2>Your assets<br>
-              are safe</h2>
+            <h2 data-translate="reveal_text_31"></h2>
           </div>
           <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
-            <div class="subtitle1 js-reveal-bottom reveal--bottom">All data between the device and the blockchain is encrypted, ensuring complete security and confidentiality of transactions</div>
+            <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_32"></div>
 
             <div class="relative js-reveal-parent">
               <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
@@ -726,8 +668,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">Self-storage</div>
-              <p class="text-gray">Your keys never leave your device. Only you have complete control over them.</p>
+              <div class="subtitle3" data-translate="reveal_text_33"></div>
+              <p class="text-gray" data-translate="reveal_text_34"></p>
             </div>
           </div>
 
@@ -740,8 +682,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">Hardware wallets</div>
-              <p class="text-gray">Add an extra layer of protection for your private key with a hardware wallet</p>
+              <div class="subtitle3" data-translate="reveal_text_35"></div>
+              <p class="text-gray" data-translate="reveal_text_36"></p>
             </div>
           </div>
 
@@ -754,8 +696,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">Control your data</div>
-              <p class="text-gray">We value your privacy. Taler Wallet does not collect any personal data or analytics</p>
+              <div class="subtitle3" data-translate="reveal_text_37"></div>
+              <p class="text-gray" data-translate="reveal_text_38"></p>
             </div>
           </div>
 
@@ -768,8 +710,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">PIN code protection</div>
-              <p class="text-gray">PIN-based login and transaction confirmation keep your assets secure.</p>
+              <div class="subtitle3" data-translate="reveal_text_39"></div>
+              <p class="text-gray" data-translate="reveal_text_40"></p>
             </div>
           </div>
 
@@ -782,8 +724,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">Phishing protection</div>
-              <p class="text-gray">Avoid phishing addresses and DApps with our open blocklist</p>
+              <div class="subtitle3" data-translate="reveal_text_41"></div>
+              <p class="text-gray" data-translate="reveal_text_42"></p>
             </div>
           </div>
 
@@ -796,8 +738,8 @@
             </div>
 
             <div class="flex flex-col items-start gap-[20px]">
-              <div class="subtitle3">Phishing protection</div>
-              <p class="text-gray">Avoid phishing addresses and DApps with our open blocklist</p>
+              <div class="subtitle3" data-translate="reveal_text_43"></div>
+              <p class="text-gray" data-translate="reveal_text_44"></p>
             </div>
           </div>
         </div>
@@ -807,72 +749,72 @@
     <section class="md:pt-[117px] md:pb-[76px] py-[32px] js-reveal-parent" id="faq">
       <div class="js-reveal-bottom-trigger"></div>
       <div class="container mdMax:px-[56px] js-reveal-bottom reveal--bottom">
-        <h2 class="md:text-center md:mb-[110px] mb-[64px]">Frequently asked questions</h2>
+        <h2 class="md:text-center md:mb-[110px] mb-[64px]" data-translate="faq_text_1"></h2>
 
         <div class="faq">
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">The bank account for your everyday life</div>
+              <div class="faq__question-text" data-translate="faq_text_2"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_3">
+                <p></p>
               </div>
             </div>
           </div>
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">What types of deposits are there?</div>
+              <div class="faq__question-text" data-translate="faq_text_4"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_5">
+                <p></p>
               </div>
             </div>
           </div>
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">What types of credit cards are there?</div>
+              <div class="faq__question-text" data-translate="faq_text_6"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_7">
+                <p></p>
               </div>
             </div>
           </div>
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">What is a debit card?</div>
+              <div class="faq__question-text" data-translate="faq_text_8"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_9">
+                <p></p>
               </div>
             </div>
           </div>
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">What are the benefits of debit cards?</div>
+              <div class="faq__question-text" data-translate="faq_text_10"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_11">
+                <p></p>
               </div>
             </div>
           </div>
           <div class="faq__item">
             <div class="faq__question">
-              <div class="faq__question-text">What is credit insurance?</div>
+              <div class="faq__question-text" data-translate="faq_text_12"></div>
               <div class="faq__question-icon"></div>
             </div>
             <div class="faq__answer">
-              <div class="faq__answer-wrapper">
-                <p>Combat payment fraud by scanning every transaction in real-time and swiftly blocking any suspicious activity. We verify if bank cards are legitimate and belong to the rightful user to avoid costly chargebacks and preserve customer trust in your services.</p>
+              <div class="faq__answer-wrapper" data-translate="faq_text_13">
+                <p></p>
               </div>
             </div>
           </div>
@@ -889,9 +831,8 @@
         alt="" />
 
       <div class="container js-reveal-bottom reveal--bottom">
-        <h2 class="md:text-center md:mb-[30px] mb-[40px]">How to start using the app</h2>
-        <p class="text-gray md:text-center">Get started with Web3 without revealing personal information.<br>
-          Use a standalone Taler cryptocurrency wallet</p>
+        <h2 class="md:text-center md:mb-[30px] mb-[40px]" data-translate="get_start_text_1"></h2>
+        <p class="text-gray md:text-center" data-translate="get_start_text_2"></p>
 
         <div class="md:py-[136px] py-[40px] flex mdMax:flex-col md:justify-center gap-[20px]">
           <a href="#" class="btn btn-os btn-os--mac">iOS</a>
@@ -903,20 +844,20 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
           <div class="feature-box feature-box--type4">
             <div class="feature-box__number">1</div>
-            <div class="subtitle3">Install Taler Wallet</div>
-            <p class="text-gray">Download the Taler Wallet app for iOS, Android, Market or Windows</p>
+            <div class="subtitle3" data-translate="get_start_text_3"></div>
+            <p class="text-gray" data-translate="get_start_text_4"></p>
           </div>
 
           <div class="feature-box feature-box--type4">
             <div class="feature-box__number">2</div>
-            <div class="subtitle3">Create a wallet</div>
-            <p class="text-gray">Create a new wallet and keep the secret phrase in a safe place</p>
+            <div class="subtitle3" data-translate="get_start_text_5"></div>
+            <p class="text-gray" data-translate="get_start_text_6"></p>
           </div>
 
           <div class="feature-box feature-box--type4">
             <div class="feature-box__number">3</div>
-            <div class="subtitle3">Start using cryptocurrency</div>
-            <p class="text-gray">Get or buy cryptocurrency in your new crypto wallet</p>
+            <div class="subtitle3" data-translate="get_start_text_7"></div>
+            <p class="text-gray" data-translate="get_start_text_8"></p>
           </div>
         </div>
       </div>
@@ -926,22 +867,22 @@
   <footer class="footer">
     <div class="container">
       <div class="flex md:justify-between md:items-center mdMax:flex-col mdMax:gap-[32px]">
-        <a href="#mobile_wallet" class="footer__link js-scroll-to">Mobile wallet</a>
-        <a href="#desktop_wallet" class="footer__link js-scroll-to">Desktop wallet</a>
-        <a href="#staking" class="footer__link js-scroll-to">Staking</a>
-        <a href="#vivid_staking" class="footer__link js-scroll-to">Vivid Staking</a>
-        <a href="#blockchain" class="footer__link js-scroll-to">Blockchain</a>
-        <a href="#security" class="footer__link js-scroll-to">Security</a>
-        <a href="#faq" class="footer__link js-scroll-to">FAQ</a>
-        <a href="#how_to_get_started" class="footer__link js-scroll-to">How to get started</a>
+	  <a href="./#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet" class="footer__link"></a>
+      <a href="./#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet" class="footer__link"></a>
+      <a href="./#staking" data-translate="button_staking" id="button_staking" class="footer__link"></a>
+      <a href="./#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking" class="footer__link"></a>
+      <a href="./#blockchain" data-translate="button_blockchain" id="button_blockchain" class="footer__link"></a>
+      <a href="./#security" data-translate="button_security" id="button_security" class="footer__link"></a>
+      <a href="./#faq" data-translate="button_faq" id="button_faq" class="footer__link"></a>
+      <a href="./#how_to_get_started" data-translate="button_get_started" id="button_get_started" class="footer__link"></a>
       </div>
 
       <div class="footer__divider"></div>
 
       <div class="flex md:justify-between md:items-center md:mb-[144px] mb-[32px] mdMax:flex-col">
         <div class="flex md:items-center md:gap-[24px] gap-[32px] mdMax:flex-col mdMax:mb-[95px]">
-          <a href="./terms.html" class="footer__link">Terms of service</a>
-          <a href="#" class="footer__link">Privacy Policy</a>
+          <a href="./terms.html" class="footer__link" data-translate="button_terms" id="button_terms"></a>
+          <a href="./policy.html" class="footer__link" data-translate="button_policy" id="button_policy"></a>
         </div>
         <div class="footer__text">Taler UNO</div>
       </div>
@@ -952,58 +893,22 @@
         <a href="#" class="btn btn-outline-gradient-green">
           <span>Explorer</span>
         </a>
-        <!--<div class="flex items-center md:gap-[33px] mdMax:justify-between">
-          <a href="#">
-            <img
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-src="./public/img/socials/mail.svg"
-              class="lazyload pointer-events-none select-none"
-              alt="" />
-          </a>
-          <a href="#">
-            <img
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-src="./public/img/socials/discord.svg"
-              class="lazyload pointer-events-none select-none"
-              alt="" />
-          </a>
-          <a href="#">
-            <img
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-src="./public/img/socials/Telegram.svg"
-              class="lazyload pointer-events-none select-none"
-              alt="" />
-          </a>
-          <a href="#">
-            <img
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-src="./public/img/socials/facebook.svg"
-              class="lazyload pointer-events-none select-none"
-              alt="" />
-          </a>
-          <a href="#">
-            <img
-              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-              data-src="./public/img/socials/twitter.svg"
-              class="lazyload pointer-events-none select-none"
-              alt="" />
-          </a>
-        </div>-->
       </div>
     </div>
   </footer>
 
   <div class="cookie-banner">
-    <div class="cookie-banner__title">Privacy Settings</div>
-    <div class="cookie-banner__text">We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.</div>
+    <div class="cookie-banner__title" data-translate="cookie_policy" id="cookie_policy"></div>
+    <div class="cookie-banner__text" data-translate="cookie_banner_text_1" id="cookie_banner_text_1"></div>
     <div class="cookie-banner__btns">
       <button type="button" class="btn btn-outline-green">Customize</button>
-      <button type="button" class="btn btn-outline-green" id="reject-cookies">Reject All</button>
-      <button type="button" class="btn btn-light" id="accept-cookies">Accept All</button>
+      <button type="button" class="btn btn-outline-green" id="reject-cookies" data-translate="reject-cookies"></button>
+      <button type="button" class="btn btn-light" id="accept-cookies" data-translate="accept-cookies"></button>
     </div>
   </div>
-</div>
 
+
+<script src="./public/js/lang.js"></script>
 <script src="./public/js/vendor-min.js?v=1.1.0"></script>
 <script src="./public/js/scripts-min.js?v=1.1.5"></script>
 </body>
