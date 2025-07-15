@@ -282,7 +282,6 @@ gulp.task('dev', gulp.series(
 
 gulp.task('build', gulp.series(
   'clean',
-  'html-build',
   'styles',
   'additional_js',
   'scriptsVendor',
