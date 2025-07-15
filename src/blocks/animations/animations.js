@@ -82,7 +82,7 @@ function heroVideoAnimation(imagesCount) {
   var frameCount = imagesCount - 1;
   var sectionHeight = $('.hero')[0].scrollHeight;
   var windowHeight = $(window).height();
-  var currentFrame = (index) => `./public/videos/video1/intro_video${index.toString().padStart(3, '0')}.jpg`;
+  var currentFrame = (index) => `videos/video1/intro_video${index.toString().padStart(3, '0')}.jpg`;
 
   // Preload images
   var preloadImages = function () {
@@ -192,7 +192,7 @@ function mobileVideoAnimation(imagesCount) {
   var frameCount = imagesCount - 1;
   var sectionHeight = $('.mobile-video__section')[0].scrollHeight;
   var windowHeight = $(window).height();
-  var currentFrame = (index) => `./public/videos/video2/video${index.toString().padStart(3, '0')}.jpg`;
+  var currentFrame = (index) => `videos/video2/video${index.toString().padStart(3, '0')}.jpg`;
 
   // Preload images
   var preloadImages = function () {
@@ -271,9 +271,9 @@ jQuery(function ($) {
       for (let i = 0; i <= count - 1; i++) {
         let imgPath;
         if (folder === 'video1') {
-          imgPath = `./public/videos/${folder}/intro_video${String(i).padStart(3, '0')}.jpg`;
+          imgPath = `videos/${folder}/intro_video${String(i).padStart(3, '0')}.jpg`;
         } else {
-          imgPath = `./public/videos/${folder}/video${String(i).padStart(3, '0')}.jpg`;
+          imgPath = `videos/${folder}/video${String(i).padStart(3, '0')}.jpg`;
         }
 
         if (isImageCached(imgPath)) {
@@ -294,7 +294,7 @@ jQuery(function ($) {
 
   // Fetch totalImages from config.json
   if ($('.hero').length) {
-    $.getJSON('./public/config.json', function (data) {
+    $.getJSON('config.json', function (data) {
       preloadImages(data);
     }).fail(function () {
       console.error("Failed to load config.json");

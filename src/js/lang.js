@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async setLanguage(lang) {
       try {
         // Загрузка переводов
-        const response = await fetch(`public/lang/${lang}.json`);
+        const response = await fetch(`lang/${lang}.json`);
         const translations = await response.json();
         
         // Обновление контента
