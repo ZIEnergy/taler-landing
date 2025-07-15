@@ -29,6 +29,7 @@ const paths = {
   },
   html: {
     src: ['./*.html'],
+    dest: './public',
     watch: ['./*.html']
   },
   css: {
@@ -101,6 +102,11 @@ gulp.task('generateConfig', function (done) {
 
 gulp.task('clean', function () {
   return del([paths.dirs.build]);
+});
+
+gulp.task('html-build', function() {
+  return gulp.src(paths.html.src)
+      .pipe(gulp.dest(paths.html.dest));
 });
 
 gulp.task('html', function () {
@@ -260,6 +266,7 @@ gulp.task('watch', function () {
 
 gulp.task('dev', gulp.series(
   'clean',
+  'html-build',
   'styles',
   'additional_js',
   'scriptsVendor',
@@ -275,6 +282,7 @@ gulp.task('dev', gulp.series(
 
 gulp.task('build', gulp.series(
   'clean',
+  'html-build',
   'styles',
   'additional_js',
   'scriptsVendor',
