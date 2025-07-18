@@ -111,6 +111,7 @@ gulp.task('html-build', function() {
 
 gulp.task('html', function () {
   return gulp.src(paths.html.src)
+    .pipe(gulp.dest(paths.html.dest))
     .pipe(browserSync.reload({
       stream: true
     }));
@@ -230,12 +231,11 @@ gulp.task('lang', function () {
 gulp.task('server', function () {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './public/'
     },
     reloadOnRestart: true
   });
   gulp.watch(paths.html.watch, gulp.parallel('html'));
-  gulp.watch(paths.html.watch, gulp.parallel('styles'));
   gulp.watch(paths.css.watch, gulp.parallel('styles'));
   gulp.watch(paths.additional_js.watch, gulp.parallel('additional_js'));
   gulp.watch(paths.jsVendor.watch, gulp.parallel('scriptsVendor'));
