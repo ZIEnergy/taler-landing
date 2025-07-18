@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taler</title>
+
+  <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="shortcut icon" href="./favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Taler" />
+  <link rel="manifest" href="./site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css?v=1.0.4">
+</head>
+<body>
+
+<div class="menu">
+  <div class="menu__container">
+    <button type="button" class="menu__burger"></button>
+    <ul class="menu__list no-scroll">
+      <li>
+        <a href="index.html#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet"></a>
+      </li>
+      <li>
+        <a href="index.html#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet"></a>
+      </li>
+      <li>
+        <a href="index.html#staking" data-translate="button_staking" id="button_staking"></a>
+      </li>
+      <li>
+        <a href="index.html#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking"></a>
+      </li>
+      <li>
+        <a href="index.html#blockchain" data-translate="button_blockchain" id="button_blockchain"></a>
+      </li>
+      <li>
+        <a href="index.html#security" data-translate="button_security" id="button_security"></a>
+      </li>
+      <li>
+        <a href="index.html#faq" data-translate="button_faq" id="button_faq"></a>
+      </li>
+      <li>
+        <a href="index.html#how_to_get_started" data-translate="button_get_started" id="button_get_started"></a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-outline-gradient-green btn-explorer">
+          <span>Explorer</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="header__overlay"></div>
+<header class="header">
+  <a href="./" class="header__back">
+    <img src="./img/icons/icon-back.svg" alt="">
+  </a>
+  <button type="button" class="header__burger"></button>
+  <div class="lang-switcher">
+    <button type="button" class="lang-switcher__current" id="language_switcher">
+      <span>
+        <img src="./img/flags/flag-en.svg" alt="" data-lang-flag>
+        <span data-translate="current_lang" id="current_lang"></span>
+      </span>
+    </button>
+    <!--<div class="lang-switcher__overflow"></div>-->
+    <ul class="lang-switcher__dropdown">
+      <li>
+        <a href="#" data-lang="fr"><img src="./img/flags/flag-fr.svg" alt=""><span data-translate="lng_fr" id="lng_fr"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="en"><img src="./img/flags/flag-en.svg" alt=""><span data-translate="lng_en" id="lng_en"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="it"><img src="./img/flags/flag-it.svg" alt=""><span data-translate="lng_it" id="lng_it"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="de"><img src="./img/flags/flag-de.svg" alt=""><span data-translate="lng_de" id="lng_de"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="lt"><img src="./img/flags/flag-lt.svg" alt=""><span data-translate="lng_lt" id="lng_lt"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="es"><img src="./img/flags/flag-es.svg" alt=""><span data-translate="lng_es" id="lng_es"></span></a>
+      </li>
+      <li>
+        <a href="#" data-lang="ru"><img src="./img/flags/flag-ru.svg" alt=""><span data-translate="lng_ru" id="lng_ru"></span></a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<main class="main">
+  <section class="md:pt-[155px] md:pb-[180px] py-[80px]">
+    <div class="container grid grid-cols-1 gap-[54px]">
+      <h1 class="h2" data-translate="terms_text_1" id="terms_text_1"></h1>
+      <h5 data-translate="terms_text_2" id="terms_text_2"></h5>
+	    <p class="text-gray" data-translate="terms_text_3" id="terms_text_3"></p>
+      <p class="text-gray" data-translate="terms_text_4" id="terms_text_4"></p>
+	    <p class="text-gray" data-translate="terms_text_5" id="terms_text_5"></p>
+      <h5 data-translate="terms_text_6" id="terms_text_6"></h5>
+      <p class="text-gray" data-translate="terms_text_7" id="terms_text_7"></p>
+      <p class="text-gray" data-translate="terms_text_8" id="terms_text_8"></p>
+      <p class="text-gray" data-translate="terms_text_9" id="terms_text_9"></p>
+      <p class="text-gray" data-translate="terms_text_10" id="terms_text_10"></p>
+      <p class="text-gray" data-translate="terms_text_11" id="terms_text_11"></p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="flex md:justify-between md:items-center mdMax:flex-col mdMax:gap-[32px]">
+	  <a href="./#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet" class="footer__link"></a>
+      <a href="./#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet" class="footer__link"></a>
+      <a href="./#staking" data-translate="button_staking" id="button_staking" class="footer__link"></a>
+      <a href="./#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking" class="footer__link"></a>
+      <a href="./#blockchain" data-translate="button_blockchain" id="button_blockchain" class="footer__link"></a>
+      <a href="./#security" data-translate="button_security" id="button_security" class="footer__link"></a>
+      <a href="./#faq" data-translate="button_faq" id="button_faq" class="footer__link"></a>
+      <a href="./#how_to_get_started" data-translate="button_get_started" id="button_get_started" class="footer__link"></a>
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <div class="flex md:justify-between md:items-center md:mb-[144px] mb-[32px] mdMax:flex-col">
+      <div class="flex md:items-center md:gap-[24px] gap-[32px] mdMax:flex-col mdMax:mb-[95px]">
+        <a href="./terms.html" class="footer__link" data-translate="button_terms" id="button_terms"></a>
+        <a href="./policy.html" class="footer__link" data-translate="button_policy" id="button_policy"></a>
+      </div>
+      <div class="footer__text">Taler UNO</div>
+    </div>
+
+    <div class="flex md:justify-between md:items-center mdMax:flex-col">
+      <div class="footer__text text-gray3 mdMax:mb-[40px]">© 2025 Taler</div>
+
+      <a href="#" class="btn btn-outline-gradient-green">
+        <span>Explorer</span>
+      </a>
+      <!--<div class="flex items-center md:gap-[33px] mdMax:justify-between">
+        <a href="#">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/socials/mail.svg"
+            class="lazyload pointer-events-none select-none"
+            alt="" />
+        </a>
+        <a href="#">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/socials/discord.svg"
+            class="lazyload pointer-events-none select-none"
+            alt="" />
+        </a>
+        <a href="#">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/socials/Telegram.svg"
+            class="lazyload pointer-events-none select-none"
+            alt="" />
+        </a>
+        <a href="#">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/socials/facebook.svg"
+            class="lazyload pointer-events-none select-none"
+            alt="" />
+        </a>
+        <a href="#">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="./public/img/socials/twitter.svg"
+            class="lazyload pointer-events-none select-none"
+            alt="" />
+        </a>
+      </div>-->
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner">
+  <div class="cookie-banner__title" data-translate="cookie_policy" id="cookie_policy"></div>
+  <div class="cookie-banner__text">
+  <p class="mb-6" data-translate="cookie_banner_text_1" id="cookie_banner_text_1"></p>
+      <img src="./img/cookies-blur.png" alt="" class="cookie-banner__text-blur">
+  
+  </div>
+  <div class="cookie-banner__btns">
+    <button type="button" class="btn btn-outline-green">Customize</button>
+    <button type="button" class="btn btn-outline-green" id="reject-cookies" data-translate="reject-cookies"></button>
+    <button type="button" class="btn btn-light" id="accept-cookies" data-translate="accept-cookies"></button>
+  </div>
+</div>
+
+<script src="./js/vendor-min.js?v=1.0.4"></script>
+<script src="./js/scripts-min.js?v=1.0.4"></script>
+<script src="./js/lang.js"></script>
+</body>
+</html>
