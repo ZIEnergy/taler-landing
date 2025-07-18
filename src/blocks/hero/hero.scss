@@ -91,6 +91,10 @@
     //transition: all .5s ease;
     transform: translateY(100%);
 
+    @media only screen and (max-width: theme('screens.mdMax.max')) {
+      font-size: 32px;
+    }
+
     &.show {
       //opacity: 1;
       //transform: translateY(0);
