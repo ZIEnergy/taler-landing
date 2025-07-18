@@ -12,10 +12,20 @@ jQuery(function ($) {
   });
 
   $('.menu__list li a').on('click', function(e) {
-    e.preventDefault();
+    var href = $(this).attr('href');
+    var isLinkToIndex = href.indexOf('index.html') === 0;
+    var hash = href.substring(href.indexOf('#'));
+    var $scrollTo = $(hash);
 
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
+    if (isLinkToIndex && window.location.pathname.indexOf('index.html') === -1) {
+      return;
+    }
+
+    if( !$scrollTo.length ) return;
+    
+    e.preventDefault();
+    
+    var $container = $('html, body');
 
     $('.menu').fadeOut(500);
     $('body').css('overflow', '');
