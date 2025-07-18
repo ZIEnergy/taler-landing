@@ -11,7 +11,7 @@ jQuery(function ($) {
     });
   });
 
-  $('.menu__list:not(.no-scroll) li a').on('click', function(e) {
+  $('.menu__list li a').on('click', function(e) {
     e.preventDefault();
 
     var $container = $('html, body'),
