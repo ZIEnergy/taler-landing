@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       fontSize: {
         '19px': ['19px', 'normal'],
+        '27px': ['27px', '150%'],
       },
       minWidth: {
         '24px': '24px',
@@ -35,6 +36,8 @@ module.exports = {
       },
       spacing: {
         '90px': '90px',
+        '20px': '20px',
+        '8px': '8px',
       },
       colors: {
         primary: '#070B14',

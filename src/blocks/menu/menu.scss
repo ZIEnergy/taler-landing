@@ -61,12 +61,31 @@
     li {
 
       a {
-        font-size: 17px;
-        line-height: 150%;
-        font-weight: 400;
+        font-size: 27px;
+        line-height: 120%;
+        font-weight: 700;
         text-align: left;
         letter-spacing: 0;
         color: theme('colors.secondary');
+
+        @media only screen and (max-width: theme('screens.mdMax.max')) {
+          font-size: 17px;
+          font-weight: 400;
+        }
+
+        &.btn-explorer {
+          margin-top: 20px;
+          line-height: 1.5;
+          font-size: 27px;
+          font-weight: 400;
+          padding: 8px 20px;
+          border-radius: 50px;
+
+          @media only screen and (max-width: theme('screens.mdMax.max')) {
+            font-size: 17px;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
@@ -106,4 +125,11 @@
       }
     }
   }
+}
+
+.btn-explorer {
+  margin-top: 20px;
+  padding: 8px 20px;
+  font-size: 27px;
+  border-radius: 50px;
 }
