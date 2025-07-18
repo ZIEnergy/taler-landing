@@ -1,9 +1,10 @@
 jQuery(function ($) {
   $('.js-scroll-to').on('click', function(e) {
+    var $scrollTo = $($(this).attr('href'));
+    if( !$scrollTo.length ) return;
     e.preventDefault();
 
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
+    var $container = $('html, body');
     
     /*$container.scrollTop(
       $scrollTo.offset().top - $container.offset().top + $container.scrollTop()

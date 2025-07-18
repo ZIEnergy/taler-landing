@@ -323,33 +323,18 @@ jQuery(function ($) {
 });
 
 jQuery(function ($) {
-
-  $('.faq__question').on('click', function(e) {
+  $('.dropdown__selected').on('click', function (e) {
     e.preventDefault();
-    if ($(this).parent().hasClass('is-open')) {
-      $(this).parent().removeClass('is-open');
-      $(this).next().slideUp({
-        duration: 500,
-        start: function() {
-          $(this).find('.faq__answer-wrapper').css('opacity', '0');
-        }
-      });
-    } else {
-      $(this).parent().addClass('is-open');
-      $(this).next().slideDown({
-        duration: 500,
-        // complete: function() {
-        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
-        // },
-        progress: function(animation, progress, remainingMs) {
-          if (remainingMs < 100) {
-            $(this).find('.faq__answer-wrapper').css('opacity', '1');
-          }
-        }
-      });
-    }
+    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
+    $(this).parent().toggleClass('is-open');
   });
 
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
+      $('.dropdown__drop-list').fadeOut(300);
+      $('.dropdown').removeClass('is-open');
+    }
+  });
 });
 
 jQuery(function ($) {
@@ -443,46 +428,35 @@ $(window).on('resize', function () {
 });
 
 jQuery(function ($) {
-  $('.dropdown__selected').on('click', function (e) {
+
+  $('.faq__question').on('click', function(e) {
     e.preventDefault();
-    $(this).siblings('.dropdown__drop-list').fadeToggle(300);
-    $(this).parent().toggleClass('is-open');
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('dropdown') && $(e.target).parents('.dropdown').length === 0) {
-      $('.dropdown__drop-list').fadeOut(300);
-      $('.dropdown').removeClass('is-open');
-    }
-  });
-});
-
-
-jQuery(function ($) {
-  $('.lang-switcher__current').on('click', function (e) {
-    e.preventDefault();
-    $('.header__overlay').fadeToggle(300);
-    $('.lang-switcher__dropdown').fadeToggle({
-      duration: 300,
-      start: function () {
-        if ($(this).is(':visible')) {
-          $(this).css({
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-          });
+    if ($(this).parent().hasClass('is-open')) {
+      $(this).parent().removeClass('is-open');
+      $(this).next().slideUp({
+        duration: 500,
+        start: function() {
+          $(this).find('.faq__answer-wrapper').css('opacity', '0');
         }
-      }
-    });
-  });
-
-  $(document).on('click', function (e) {
-    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
-      $('.lang-switcher__dropdown').fadeOut(300);
-      $('.header__overlay').fadeOut(300);
+      });
+    } else {
+      $(this).parent().addClass('is-open');
+      $(this).next().slideDown({
+        duration: 500,
+        // complete: function() {
+        //   $(this).find('.faq__answer-wrapper').css('opacity', '1');
+        // },
+        progress: function(animation, progress, remainingMs) {
+          if (remainingMs < 100) {
+            $(this).find('.faq__answer-wrapper').css('opacity', '1');
+          }
+        }
+      });
     }
   });
+
 });
+
 
 /*
 jQuery(function ($) {
@@ -528,6 +502,32 @@ jQuery(function ($) {
 */
 
 jQuery(function ($) {
+  $('.lang-switcher__current').on('click', function (e) {
+    e.preventDefault();
+    $('.header__overlay').fadeToggle(300);
+    $('.lang-switcher__dropdown').fadeToggle({
+      duration: 300,
+      start: function () {
+        if ($(this).is(':visible')) {
+          $(this).css({
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+          });
+        }
+      }
+    });
+  });
+
+  $(document).on('click', function (e) {
+    if (!$(e.target).hasClass('lang-switcher') && $(e.target).parents('.lang-switcher').length === 0) {
+      $('.lang-switcher__dropdown').fadeOut(300);
+      $('.header__overlay').fadeOut(300);
+    }
+  });
+});
+
+jQuery(function ($) {
 });
 
 jQuery(function ($) {
@@ -560,10 +560,11 @@ jQuery(function ($) {
 
 jQuery(function ($) {
   $('.js-scroll-to').on('click', function(e) {
+    var $scrollTo = $($(this).attr('href'));
+    if( !$scrollTo.length ) return;
     e.preventDefault();
 
-    var $container = $('html, body'),
-      $scrollTo = $($($(this).attr('href')));
+    var $container = $('html, body');
     
     /*$container.scrollTop(
       $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
