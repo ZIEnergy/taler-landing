@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Taler</title>
+
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Taler" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=1.1.5">
+</head>
+<body style="overflow: hidden">
+
+<!--<div class="intro-video">
+  <video id="intro-video" muted playsinline preload="auto">
+    <source src="videos/start.mp4#t=0.1" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>-->
+
+<div class="preloader" id="preloader">
+  <div id="progress-text" class="preloader__bar">
+    <div class="preloader__bar-filler"></div>
+  </div>
+</div>
+
+<div class="site-content" id="siteContent">
+  <div class="menu">
+    <div class="menu__container">
+      <button type="button" class="menu__burger"></button>
+          <ul class="menu__list no-scroll">
+      <li>
+        <a href="#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet"></a>
+      </li>
+      <li>
+        <a href="#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet"></a>
+      </li>
+      <li>
+        <a href="#staking" data-translate="button_staking" id="button_staking"></a>
+      </li>
+      <li>
+        <a href="#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking"></a>
+      </li>
+      <li>
+        <a href="#blockchain" data-translate="button_blockchain" id="button_blockchain"></a>
+      </li>
+      <li>
+        <a href="#security" data-translate="button_security" id="button_security"></a>
+      </li>
+      <li>
+        <a href="#faq" data-translate="button_faq" id="button_faq"></a>
+      </li>
+      <li>
+        <a href="#how_to_get_started" data-translate="button_get_started" id="button_get_started"></a>
+      </li>
+      <li>
+        <a href="#" class="btn btn-outline-gradient-green btn-explorer">
+          <span>Explorer</span>
+        </a>
+      </li>
+    </ul>
+</div>
+</div>
+</div>
+  <div class="header__overlay"></div>
+  <header class="header">
+    <button type="button" class="header__burger"></button>
+        <div class="lang-switcher">
+          <button type="button" class="lang-switcher__current" id="language_switcher">
+            <span>
+              <img src="img/flags/flag-en.svg" alt="" data-lang-flag>
+              <span data-translate="current_lang" id="current_lang"></span>
+            </span>
+          </button>
+          <!--<div class="lang-switcher__overflow"></div>-->
+          <ul class="lang-switcher__dropdown">
+            <li>
+              <a href="#" data-lang ="fr" ><img src="img/flags/flag-fr.svg" alt=""><span data-translate="lng_fr" id="lng_fr"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="en"><img src="img/flags/flag-en.svg" alt=""><span data-translate="lng_en" id="lng_en"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="it"><img src="img/flags/flag-it.svg" alt=""><span data-translate="lng_it" id="lng_it"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="de"><img src="img/flags/flag-de.svg" alt=""><span data-translate="lng_de" id="lng_de"></span></a>
+            </li>
+            <li>
+              <a href="#" data-lang="lt"><img src="img/flags/flag-lt.svg" alt=""><span data-translate="lng_lt" id="lng_lt"></span></a>
+            </li>
+			<li>
+              <a href="#" data-lang="es"><img src="img/flags/flag-es.svg" alt=""><span data-translate="lng_es" id="lng_es"></span></a>
+            </li>
+			<li>
+              <a href="#" data-lang="ru"><img src="img/flags/flag-ru.svg" alt=""><span data-translate="lng_ru" id="lng_ru"></span></a>
+            </li>
+          </ul>
+        </div>
+
+
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="hero__anim-wrapper">
+        <img src="videos/video1/intro_video000.jpg" alt="" class="hero__anim-img">
+        <div class="container hero__text-container">
+          <h1 class="hero__text" data-translate="hero_text"></h1>
+        </div>
+
+        <div class="hero__down">
+          <img src="img/icons/icon-scroll-down2.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[60px] md:pb-[65px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <!-- To initially show on mob add reveal--show-on-mob class -->
+      <div class="container js-reveal-bottom reveal--bottom">
+        <div class="grid md:grid-cols-3 md:gap-[69px] grid-cols-1 gap-[62px]">
+          <div class="flex flex-col items-start gap-[20px]">
+            <img
+              src="img/icons/Icon1.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <h4 data-translate="reveal_text_1"></h4>
+            <p class="text-gray" data-translate="reveal_text_2"></p>
+          </div>
+
+          <div class="flex flex-col items-start gap-[20px]">
+            <img
+              src="img/icons/Icon2.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <h4 data-translate="reveal_text_3"></h4>
+            <p class="text-gray" data-translate="reveal_text_4"></p>
+          </div>
+
+          <div class="flex flex-col items-start gap-[20px]">
+            <img
+              src="img/icons/Icon3.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <h4 data-translate="reveal_text_5"></h4>
+            <p class="text-gray" data-translate="reveal_text_6"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[110px] md:pb-[134px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
+        <h2 class="text-center mb-[40px] md:mb-[84px]" data-translate="reveal_text_7"></h2>
+        <div class="grid md:grid-cols-2 md:gap-[20px] grid-cols-1 gap-[16px]">
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]" data-translate="reveal_text_8"></h4>
+              <p class="text-gray" data-translate="reveal_text_9"></p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img1.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img1.png"
+                  type="image/png" />
+                <source
+                  srcset="img/feature-box/feature-box-img-mob1.webp"
+                  type="image/webp" />
+                <img
+                  src="img/feature-box/feature-box-img-mob1.png"
+                  class="pointer-events-none select-none mdMax:w-[204px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]" data-translate="reveal_text_10"></h4>
+              <p class="text-gray" data-translate="reveal_text_11"></p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img2.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img2.png"
+                  type="image/png" />
+                <source
+                  srcset="img/feature-box/feature-box-img-mob2.webp"
+                  type="image/webp" />
+                <img
+                  src="img/feature-box/feature-box-img-mob2.png"
+                  class="pointer-events-none select-none mdMax:w-[254px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]" data-translate="reveal_text_12"></h4>
+              <p class="text-gray" data-translate="reveal_text_13"></p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img3.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img3.png"
+                  type="image/png" />
+                <source
+                  srcset="img/feature-box/feature-box-img-mob3.webp"
+                  type="image/webp" />
+                <img
+                  src="img/feature-box/feature-box-img-mob3.png"
+                  class="pointer-events-none select-none mdMax:w-[206px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box__content">
+              <h4 class="mb-[32px]" data-translate="reveal_text_14"></h4>
+              <p class="text-gray" data-translate="reveal_text_15"></p>
+            </div>
+            <div class="feature-box__img">
+              <picture>
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img4.webp"
+                  type="image/webp" />
+                <source
+                  media="(min-width:768px)"
+                  srcset="img/feature-box/feature-box-img4.png"
+                  type="image/png" />
+                <source
+                  srcset="img/feature-box/feature-box-img-mob4.webp"
+                  type="image/webp" />
+                <img
+                  src="img/feature-box/feature-box-img-mob4.png"
+                  class="pointer-events-none select-none mdMax:w-[246px]"
+                  alt="" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contain-paint--between-lg-4xl">
+      <section class="section section--glow1 md:pt-[120px] md:pb-[206px] pt-[54px] pb-0 js-reveal-parent mobile-video__section" id="mobile_wallet">
+
+        <div class="js-reveal-bottom-trigger"></div>
+        <div class="container js-reveal-bottom reveal--bottom mobile-video__wrapper">
+          <img
+            src="img/glow1.png?v=2"
+            class="pointer-events-none select-none section__bg lgMax:hidden"
+            alt="" />
+
+          <div class="flex items-center justify-between mdMax:flex-col mdMax:gap-[80px] mdMax:mb-0 relative z-[1]">
+            <div class="md:max-w-[488px] mdMax:px-[30px]">
+              <div class="mdMax:text-center mb-[8px]">
+                <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_16"></div>
+              </div>
+              <h3 class="mb-[26px] mdMax:text-center" data-translate="reveal_text_17"></h3>
+              <div class="flex gap-[8px] mdMax:flex-col mdMax:items-center">
+                <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                  <span>App Store</span>
+                </a>
+                <a href="#" class="btn btn-outline-gradient-green mdMax:min-w-[150px]">
+                  <span>Google Play</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="mobile-video mdMax:!hidden">
+              <picture>
+                <source
+                  srcset="img/iPhone@2x.webp"
+                  type="image/webp" />
+                <img
+                  src="img/iPhone@2x.png"
+                  class="pointer-events-none select-none"
+                  alt="" />
+              </picture>
+              <div class="mobile-video__video-wrapper">
+                <img
+                  src="videos/video2/video000.jpg"
+                  class="pointer-events-none select-none"
+                  alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center sticky top-0 left-0 md:!hidden min-h-screen z-[1]">
+          <img
+            src="img/glow1-mob.png?v=2"
+            class="pointer-events-none select-none section__bg section__bg--mobile-video lg:hidden"
+            alt="" />
+
+          <div class="mobile-video">
+            <picture>
+              <source
+                srcset="img/iPhone@2x.webp"
+                type="image/webp" />
+              <img
+                src="img/iPhone@2x.png"
+                class="pointer-events-none select-none"
+                alt="" />
+            </picture>
+            <div class="mobile-video__video-wrapper">
+              <img
+                src="videos/video2/video000.jpg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--glow1 pt-[59px] md:pb-[122px] pb-0 js-reveal-parent" id="desktop_wallet">
+        <div class="js-reveal-bottom-trigger"></div>
+
+        <div class="container lgMax:contain-paint desktop-app__heading--static">
+          <div class="desktop-app__heading">
+            <div class="text-center mb-[8px]">
+              <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_18"></div>
+            </div>
+            <h3 class="mb-[26px] text-center" data-translate="reveal_text_19"></h3>
+
+            <div class="dropdown">
+              <div class="dropdown__selected">
+                <div class="dropdown__selected-container">
+                  <span>macOS <i>Apple Silicon</i></span>
+                  <div class="dropdown__selected-arrow">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dropdown__drop-list">
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="img/icons/icon-apple.svg" alt="">
+                  <span>macOS <i>Apple Silicon</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="img/icons/icon-apple.svg" alt="">
+                  <span>macOS <i>Intel</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="img/icons/icon-windows.svg" alt="">
+                  <span>Windows <i>Intel</i></span>
+                </a>
+                <a href="#" class="dropdown__drop-list-item">
+                  <img src="img/icons/icon-windows.svg" alt="">
+                  <span>Windows <i>ARM</i></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="desktop-app__wrapper">
+          <div class="desktop-app__container">
+            <picture>
+              <source
+                media="(min-width:768px)"
+                srcset="img/glow1.png"
+                type="image/png" />
+              <img
+                src="img/glow1-mob.png"
+                class="pointer-events-none select-none section__bg section__bg--desktop-app"
+                alt="" />
+            </picture>
+
+            <div class="container lgMax:contain-paint">
+              <div class="desktop-app__heading desktop-app__heading--absolute">
+                <div class="text-center mb-[8px]">
+                  <div class="subtitle2 subtitle2--reverse-gradient" data-translate="reveal_text_18"></div>
+                </div>
+                <h3 class="mb-[26px] text-center" data-translate="reveal_text_19"></h3>
+
+                <div class="dropdown">
+                  <div class="dropdown__selected">
+                    <div class="dropdown__selected-container">
+                      <span>macOS <i>Apple Silicon</i></span>
+                      <div class="dropdown__selected-arrow">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.6067 8.00022L11 15.6069L3.39334 8.00022" stroke="white" stroke-width="2"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dropdown__drop-list">
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="img/icons/icon-apple.svg" alt="">
+                      <span>macOS <i>Apple Silicon</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="img/icons/icon-apple.svg" alt="">
+                      <span>macOS <i>Intel</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="img/icons/icon-windows.svg" alt="">
+                      <span>Windows <i>Intel</i></span>
+                    </a>
+                    <a href="#" class="dropdown__drop-list-item">
+                      <img src="img/icons/icon-windows.svg" alt="">
+                      <span>Windows <i>ARM</i></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="desktop-app">
+                <picture>
+                  <source
+                    srcset="img/desktop_01.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/desktop_01.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--1"
+                    alt="" />
+                </picture>
+                <picture>
+                  <source
+                    srcset="img/desktop_02.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/desktop_02.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--2"
+                    alt="" />
+                </picture>
+                <picture>
+                  <source
+                    srcset="img/desktop_03.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/desktop_03.png"
+                    class="pointer-events-none select-none desktop-app__img desktop-app__img--3"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <section class="md:py-[100px] py-[32px]" id="staking">
+      <div class="container mdMax:px-[56px]">
+        <div class="flex mdMax:flex-col mdMax:gap-[40px] relative js-reveal-parent">
+          <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+          <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
+            <h2 data-translate="reveal_text_20"></h2>
+          </div>
+          <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
+            <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_21"></div>
+
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+              <div class="js-reveal-bottom reveal--bottom">
+                <picture>
+                  <source
+                    srcset="img/img-cubes.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/img-cubes.png"
+                    class="pointer-events-none select-none"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[106px] md:pb-[117px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
+        <div class="grid grid-cols-1 gap-[16px] md:grid md:grid-cols-2 md:gap-[40px]">
+          <h2 class="mdMax:order-1 mdMax:mb-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" data-translate="reveal_text_22"></h2>
+          <h2 class="mdMax:order-4 mdMax:my-[24px] mdMax:text-center md:text-[40px] md:leading-[51px]" id="vivid_staking" data-translate="reveal_text_23"></h2>
+
+          <div class="mdMax:order-2 feature-box feature-box--type2">
+            <img
+              src="img/icons/icon4.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_24"></div>
+          </div>
+
+          <div class="mdMax:order-5 feature-box feature-box--type2">
+            <img
+              src="img/icons/icon5.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_25"></div>
+          </div>
+
+          <div class="mdMax:order-3 feature-box feature-box--type2">
+            <img
+              src="img/icons/icon6.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_26"></div>
+          </div>
+
+          <div class="mdMax:order-6 feature-box feature-box--type2">
+            <img
+              src="img/icons/icon7.svg"
+              alt=""
+              class="pointer-events-none select-none"
+            >
+            <div class="subtitle2 mt-[20px]" data-translate="reveal_text_27"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="hide-scroll">
+      <section class="section section--glow2 md:pt-[28px] md:pb-0 py-[32px]">
+        <div class="section__bg">
+          <img
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-src="img/glow2.png?v=2"
+            class="lazyload pointer-events-none select-none"
+            width="948"
+            alt="" />
+        </div>
+
+        <div class="container relative mdMax:px-[56px] js-reveal-parent">
+          <div class="js-reveal-bottom-trigger"></div>
+          <h2 class="md:mb-[80px] mb-[40px] md:max-w-[508px] js-reveal-bottom reveal--bottom" data-translate="reveal_text_28"></h2>
+          <div class="mdMax:flex mdMax:flex-col-reverse mdMax:gap-[40px] relative">
+            <p class="p-lg text-gray md:max-w-[508px] js-reveal-bottom reveal--bottom" data-translate="reveal_text_29"></p>
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-right-trigger absolute top-0 left-0"></div>
+              <div class="floating-cubes reveal--right js-reveal-right">
+                <picture>
+                  <source
+                    media="(min-width:768px)"
+                    srcset="img/img-cubes2.webp"
+                    type="image/webp" />
+                  <source
+                    media="(min-width:768px)"
+                    srcset="img/img-cubes2.png"
+                    type="image/png" />
+                  <source
+                    srcset="img/img-cubes2-mob.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/img-cubes2-mob.png"
+                    class="pointer-events-none select-none"
+                    width="685"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="md:pt-[100px] md:pb-[120px] py-[32px] js-reveal-parent" id="blockchain">
+        <div class="container mdMax:px-[56px] relative z-[1]">
+          <div class="js-reveal-bottom-trigger"></div>
+          <div class="flex mdMax:flex-col mdMax:gap-[40px]">
+            <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
+              <h2 data-translate="reveal_text_45"></h2>
+            </div>
+            <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
+              <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_30"></div>
+
+              <div class="relative js-reveal-parent">
+                <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+                <div class="js-reveal-bottom reveal--bottom">
+                  <picture>
+                    <source
+                      srcset="img/img-cubes3.webp"
+                      type="image/webp" />
+                    <img
+                      src="img/img-cubes3.png"
+                      class="pointer-events-none select-none mdMax:w-[221px]"
+                      width="262" height="295"
+                      alt="" />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="md:pt-[102px] md:pb-[123px] py-[32px] js-reveal-parent" id="security">
+      <div class="container mdMax:px-[56px]">
+        <div class="js-reveal-bottom-trigger"></div>
+        <div class="flex mdMax:flex-col mdMax:gap-[40px]">
+          <div class="md:flex-[1_0_0] js-reveal-bottom reveal--bottom">
+            <h2 data-translate="reveal_text_31"></h2>
+          </div>
+          <div class="md:w-[521px] flex flex-col-reverse gap-[40px] md:flex-col md:gap-[80px]">
+            <div class="subtitle1 js-reveal-bottom reveal--bottom" data-translate="reveal_text_32"></div>
+
+            <div class="relative js-reveal-parent">
+              <div class="js-reveal-bottom-trigger absolute top-0 left-0"></div>
+              <div class="js-reveal-bottom reveal--bottom">
+                <picture>
+                  <source
+                    srcset="img/img-lock1.webp"
+                    type="image/webp" />
+                  <img
+                    src="img/img-lock1.png"
+                    class="pointer-events-none select-none mdMax:w-[144px]"
+                    width="257" height="294"
+                    alt="" />
+                </picture>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[122px] md:pb-[115px] py-[32px] js-reveal-parent">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container js-reveal-bottom reveal--bottom">
+        <div class="grid grid-cols-1 gap-[16px] md:grid-cols-3 md:gap-[20px]">
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon8.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_33"></div>
+              <p class="text-gray" data-translate="reveal_text_34"></p>
+            </div>
+          </div>
+
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon9.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_35"></div>
+              <p class="text-gray" data-translate="reveal_text_36"></p>
+            </div>
+          </div>
+
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon10.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_37"></div>
+              <p class="text-gray" data-translate="reveal_text_38"></p>
+            </div>
+          </div>
+
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon11.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_39"></div>
+              <p class="text-gray" data-translate="reveal_text_40"></p>
+            </div>
+          </div>
+
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon12.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_41"></div>
+              <p class="text-gray" data-translate="reveal_text_42"></p>
+            </div>
+          </div>
+
+          <div class="feature-box feature-box--type3">
+            <div class="min-w-[40px]">
+              <img
+                src="img/icons/icon13.svg"
+                class="pointer-events-none select-none"
+                alt="" />
+            </div>
+
+            <div class="flex flex-col items-start gap-[20px]">
+              <div class="subtitle3" data-translate="reveal_text_43"></div>
+              <p class="text-gray" data-translate="reveal_text_44"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="md:pt-[117px] md:pb-[76px] py-[32px] js-reveal-parent" id="faq">
+      <div class="js-reveal-bottom-trigger"></div>
+      <div class="container mdMax:px-[56px] js-reveal-bottom reveal--bottom">
+        <h2 class="md:text-center md:mb-[110px] mb-[64px]" data-translate="faq_text_1"></h2>
+
+        <div class="faq">
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_2"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_3">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_4"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_5">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_6"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_7">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_8"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_9">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_10"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_11">
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <div class="faq__question">
+              <div class="faq__question-text" data-translate="faq_text_12"></div>
+              <div class="faq__question-icon"></div>
+            </div>
+            <div class="faq__answer">
+              <div class="faq__answer-wrapper" data-translate="faq_text_13">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--glow1 md:pt-[100px] md:pb-[108px] py-[32px] js-reveal-parent contain-paint--between-lg-4xl" id="how_to_get_started">
+      <div class="js-reveal-bottom-trigger"></div>
+      <img
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-src="img/glow1.png?v=2"
+        class="lazyload pointer-events-none select-none section__bg lgMax:hidden"
+        alt="" />
+
+      <div class="container js-reveal-bottom reveal--bottom">
+        <h2 class="md:text-center md:mb-[30px] mb-[40px]" data-translate="get_start_text_1"></h2>
+        <p class="text-gray md:text-center" data-translate="get_start_text_2"></p>
+
+        <div class="md:py-[136px] py-[40px] flex mdMax:flex-col md:justify-center gap-[20px]">
+          <a href="#" class="btn btn-os btn-os--mac">iOS</a>
+          <a href="#" class="btn btn-os btn-os--mac">macOS</a>
+          <a href="#" class="btn btn-os btn-os--playmarket">Play Market</a>
+          <a href="#" class="btn btn-os btn-os--windows">Windows</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px]">
+          <div class="feature-box feature-box--type4">
+            <div class="feature-box__number">1</div>
+            <div class="subtitle3" data-translate="get_start_text_3"></div>
+            <p class="text-gray" data-translate="get_start_text_4"></p>
+          </div>
+
+          <div class="feature-box feature-box--type4">
+            <div class="feature-box__number">2</div>
+            <div class="subtitle3" data-translate="get_start_text_5"></div>
+            <p class="text-gray" data-translate="get_start_text_6"></p>
+          </div>
+
+          <div class="feature-box feature-box--type4">
+            <div class="feature-box__number">3</div>
+            <div class="subtitle3" data-translate="get_start_text_7"></div>
+            <p class="text-gray" data-translate="get_start_text_8"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="flex md:justify-between md:items-center mdMax:flex-col mdMax:gap-[32px]">
+	  <a href="#mobile_wallet" data-translate="button_mobile_wallet" id="button_mobile_wallet" class="footer__link js-scroll-to"></a>
+      <a href="#desktop_wallet" data-translate="button_desktop_wallet" id="button_desktop_wallet" class="footer__link js-scroll-to"></a>
+      <a href="#staking" data-translate="button_staking" id="button_staking" class="footer__link js-scroll-to"></a>
+      <a href="#vivid_staking" data-translate="button_vivid_staking" id="button_vivid_staking" class="footer__link js-scroll-to"></a>
+      <a href="#blockchain" data-translate="button_blockchain" id="button_blockchain" class="footer__link js-scroll-to"></a>
+      <a href="#security" data-translate="button_security" id="button_security" class="footer__link js-scroll-to"></a>
+      <a href="#faq" data-translate="button_faq" id="button_faq" class="footer__link js-scroll-to"></a>
+      <a href="#how_to_get_started" data-translate="button_get_started" id="button_get_started" class="footer__link js-scroll-to"></a>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="flex md:justify-between md:items-center md:mb-[144px] mb-[32px] mdMax:flex-col">
+        <div class="flex md:items-center md:gap-[24px] gap-[32px] mdMax:flex-col mdMax:mb-[95px]">
+          <a href="terms.html" class="footer__link" data-translate="button_terms" id="button_terms"></a>
+          <a href="policy.html" class="footer__link" data-translate="button_policy" id="button_policy"></a>
+        </div>
+        <div class="footer__text">Taler UNO</div>
+      </div>
+
+      <div class="flex md:justify-between md:items-center mdMax:flex-col">
+        <div class="footer__text text-gray3 mdMax:mb-[40px]">© 2025 Taler</div>
+
+        <a href="#" class="btn btn-outline-gradient-green">
+          <span>Explorer</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner">
+    <div class="cookie-banner__title" data-translate="cookie_policy" id="cookie_policy"></div>
+    <div class="cookie-banner__text" data-translate="cookie_banner_text_1" id="cookie_banner_text_1"></div>
+    <div class="cookie-banner__btns">
+      <button type="button" class="btn btn-outline-green">Customize</button>
+      <button type="button" class="btn btn-outline-green" id="reject-cookies" data-translate="reject-cookies"></button>
+      <button type="button" class="btn btn-light" id="accept-cookies" data-translate="accept-cookies"></button>
+    </div>
+  </div>
+
+
+<script src="js/lang.js"></script>
+<script src="js/vendor-min.js?v=1.1.0"></script>
+<script src="js/scripts-min.js?v=1.1.5"></script>
+</body>
+</html>

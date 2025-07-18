@@ -64,7 +64,7 @@
   "reveal_text_27": "Zahlungen am Laufzeitende",
   "reveal_text_28": "Tokenisierte Smart Contracts",
   "reveal_text_29": "Talers Blockchain erreicht über 3,5 Millionen Transaktionen pro Sekunde dank seines einzigartigen Proof-of-Utility-Konsenses.",
-  "reveal_text_30": "Talers Blockchain erreicht über 3,5 Millionen Transaktionen pro Sekunde dank seines einzigartigen Proof-of-Utility-Konsenses. Diese Fähigkeit macht Taler zu einem idealen „Overlay-Netzwerk" für die Integration mit anderen Blockchain-Systemen wie Bitcoin.",
+  "reveal_text_30": "Talers Blockchain erreicht über 3,5 Millionen Transaktionen pro Sekunde dank seines einzigartigen Proof-of-Utility-Konsenses. Diese Fähigkeit macht Taler zu einem idealen 'Overlay-Netzwerk' für die Integration mit anderen Blockchain-Systemen wie Bitcoin.",
   "reveal_text_31": "Ihre Assets sind sicher",
   "reveal_text_32": "Alle Daten zwischen Gerät und Blockchain sind verschlüsselt und gewährleisten so vollständige Sicherheit und Vertraulichkeit von Transaktionen",
   "reveal_text_33": "Selbstverwahrung",
@@ -79,7 +79,7 @@
   "reveal_text_42": "Vermeiden Sie Phishing-Adressen und DApps mit unserer offenen Blocklist",
   "reveal_text_43": "Phishing-Schutz",
   "reveal_text_44": "Vermeiden Sie Phishing-Adressen und DApps mit unserer offenen Blocklist",
-  "reveal_text_45": "Fast blockchain",
+  "reveal_text_45": "Schneller Blockchain",
   "faq_text_1": "Häufig gestellte Fragen",
   "faq_text_2": "Das Bankkonto für Ihren Alltag",
   "faq_text_3": "Bekämpfen Sie Zahlungsbetrug durch Echtzeit-Überprüfung jeder Transaktion und schnelles Blockieren verdächtiger Aktivitäten. Wir prüfen, ob Bankkarten legitim sind und dem rechtmäßigen Nutzer gehören, um kostspielige Rückbuchungen zu vermeiden und das Kundenvertrauen in Ihre Dienste zu bewahren.",
@@ -101,5 +101,4 @@
   "get_start_text_6": "Erstellen Sie ein neues Wallet und bewahren Sie die geheime Phrase sicher auf",
   "get_start_text_7": "Mit Kryptowährung beginnen",
   "get_start_text_8": "Erhalten oder kaufen Sie Kryptowährung in Ihrem neuen Crypto-Wallet"
-}
 }
