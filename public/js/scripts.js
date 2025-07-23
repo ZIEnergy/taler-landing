@@ -530,24 +530,6 @@ jQuery(function ($) {
 jQuery(function ($) {
 });
 
-
-jQuery(function ($) {
-  $('.js-scroll-to').on('click', function(e) {
-    var $scrollTo = $($(this).attr('href'));
-    if( !$scrollTo.length ) return;
-    e.preventDefault();
-
-    var $container = $('html, body');
-    
-    /*$container.scrollTop(
-      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
-    );*/
-    $container.animate({
-      scrollTop: $scrollTo.offset().top
-    }, 500);
-  });
-});
-
 jQuery(function ($) {
   $('.header__burger').on('click', function (e) {
     e.preventDefault();
@@ -579,6 +561,24 @@ jQuery(function ($) {
 
     $('.menu').fadeOut(500);
     $('body').css('overflow', '');
+    $container.animate({
+      scrollTop: $scrollTo.offset().top
+    }, 500);
+  });
+});
+
+
+jQuery(function ($) {
+  $('.js-scroll-to').on('click', function(e) {
+    var $scrollTo = $($(this).attr('href'));
+    if( !$scrollTo.length ) return;
+    e.preventDefault();
+
+    var $container = $('html, body');
+    
+    /*$container.scrollTop(
+      $scrollTo.offset().top - $container.offset().top + $container.scrollTop()
+    );*/
     $container.animate({
       scrollTop: $scrollTo.offset().top
     }, 500);
